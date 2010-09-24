@@ -96,10 +96,10 @@ window.attachEvent("onload", correctPNG);
             
             <nested:iterate property="opciones" id="opcion">
             	<nested:equal property="nombre" value="VACIO">
-					<div class="bgOpcion" style="display:none;">
+					<div class="bgOpcion" style="display:none;" />
 				</nested:equal>
 				<nested:notEqual property="nombre" value="VACIO">
-					<div class="bgOpcion" onmouseover="fOver(this)" onmouseout="fOut(this)" onclick="setOpcion(this, '${opcion.id}')">
+					<div class="bgOpcion" onmouseover="fOver(this)" onmouseout="fOut(this)" onclick="setOpcion(this, '${opcion.id}')" />
 				</nested:notEqual>
 			<table width="100%" border="0" cellspacing="0" cellpadding="3">
 			<tr>
@@ -124,7 +124,7 @@ window.attachEvent("onload", correctPNG);
 			</td>
 			</tr>
 			</table>
-			</div>
+			<div />
 			<br>
 			</nested:iterate>
 
