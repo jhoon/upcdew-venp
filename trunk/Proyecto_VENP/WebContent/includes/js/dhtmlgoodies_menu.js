@@ -21,7 +21,7 @@ var activeSmallSquareColor = '#D60808'; // Color of small square at the left of 
 var colorSquareWidth = 4; 	// Width of small square;
 var marginSquare = 2;	// Margin at the right of the small color square at the left of each menu item	
 
-var bgColorLinks = "#214973";	// Background color for menu links
+var bgColorLinks = "#a63869";	// Background color for menu links
 var degreesToDarkenOrLighten = 10; // How many percent point to darken the color above on mouse over (10-15 percent point is usually enough).
 var darkenOnMouseOver = true;	// Darken or Lighten on mouse over (true = darken, false = lighten) 
 /* ABOUT COLORS

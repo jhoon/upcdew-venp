@@ -1,6 +1,6 @@
 body {
 	margin: 0px 0px 0px 0px;
-	background: #195093;
+	background: #ab6383;
 }
 
 .userName {
@@ -191,9 +191,9 @@ body {
 }
 
 .bar div {
-	border-top: solid 2px #0077DD;
-	background-color: #004080;
-	border-bottom: solid 2px #002266;
+	border-top: solid 2px #db0262;
+	background-color: #850940;
+	border-bottom: solid 2px #690330;
 	text-align: right;
 	color: white;
 	float: left;
@@ -234,7 +234,7 @@ body {
 .tableHead {
 	background: #B9C9FE none repeat scroll 0 0;
 	border: 1px solid #FFF;
-	color: #003399;
+	color: #c84881;
 	font-family: Verdana, Tahoma, Arial, Helvetica, Sans-Serif;
 	font-weight: normal;
 	text-align: center;
@@ -269,7 +269,7 @@ body {
 }
 
 .blockData {
-	background: #D0DAFD;
+	background: #f9bdd8;
 	display: block;
 	overflow: auto;
 	height: 350px;
@@ -279,7 +279,7 @@ body {
 }
 
 .dataRow {
-	background: #E8EDFF none repeat scroll 0 0;
+	background: #f9bdd8 none repeat scroll 0 0;
 	border-bottom: 1px solid #FFF;
 	border-right: 1px solid #FFF;
 	font-family: Verdana, Tahoma, Arial, Helvetica, Sans-Serif;
