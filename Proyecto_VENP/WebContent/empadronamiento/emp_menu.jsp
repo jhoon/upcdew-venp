@@ -1,8 +1,8 @@
 <%@ include file="/includes/taglibs.inc.jsp"%>
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td height="150" colspan="2" align="center" valign="top">
-        <img src="media/cibertec.jpg" width="166" height="116" border="0">
+        <td height="160" colspan="2" align="center" valign="bottom">
+        <img src="media/cibertec.jpg" width="308" height="88" border="0">
         </td>
       </tr>
       <tr>
