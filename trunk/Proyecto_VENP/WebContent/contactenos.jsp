@@ -25,7 +25,10 @@
         <p class="contact"><bean:message key="global.contact.subtitle" /></p>
         
         <ul>
-        <li class="contact">Jhoon Saravia Tasayco (LPIV y DAWII) - <a href="mailto:i610001@cibertec.edu.pe">i610001@cibertec.edu.pe xD</a>
+        <li class="contact">Jhoon Saravia Tasayco - <a href="mailto:i610001@cibertec.edu.pe">i610001@cibertec.edu.pe xD</a>
+        <li class="contact">Carla Mier Casas	  - 
+        <li class="contact">Julius Ku Lam - 
+        <li class="contact">Oscar Ramos Penny - 
         <!--  <li class="contact">Omar Carpio Carpio (DP, QSW, DAWI, LPIV y DAWII) - <a href="mailto:i610584@cibertec.edu.pe">i610584@cibertec.edu.pe</a><br />&nbsp;</li>
         <li class="contact">Rudy Capatinta Aucca (DP, QSW, DAWI, LPIV y DAWII) - <a href="mailto:i611058@cibertec.edu.pe">i611058@cibertec.edu.pe</a><br />&nbsp;</li>
         <li class="contact">Marco Cristóbal Salazar (LPIV y DAWII) - <a href="mailto:i520263@cibertec.edu.pe">i520263@cibertec.edu.pe</a><br />&nbsp;</li>
