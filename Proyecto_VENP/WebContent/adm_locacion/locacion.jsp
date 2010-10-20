@@ -16,7 +16,7 @@
           <table border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td height="150" colspan="2" align="center" valign="top">
-                <html:img page="/media/cibertec.jpg" width="166" height="116" border="0" /><br />
+                <html:img page="/media/cibertec.jpg" width="305" height="88" border="0" /><br />
                 <p class="footer" style="font-size: 20px; font-weight: bold;"><bean:message key="locacion.administracion.titulo" /></p><br />
               </td>
             </tr>
