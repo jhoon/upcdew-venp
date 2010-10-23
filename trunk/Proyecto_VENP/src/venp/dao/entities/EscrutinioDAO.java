@@ -2,8 +2,6 @@ package venp.dao.entities;
 
 import java.util.ArrayList;
 
-import venp.beans.EscrutinioBean;
-
 public interface EscrutinioDAO  {
 	
 	 

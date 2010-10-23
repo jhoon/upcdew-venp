@@ -2,7 +2,6 @@ package venp.web.actions;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +12,6 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.DynaActionForm;
 import org.apache.struts.actions.DispatchAction;
 
-import venp.beans.OpcionBean;
 import venp.services.CedulaService;
 
 public class CedulaAction extends DispatchAction {

@@ -1,13 +1,9 @@
 package venp.web.forms;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
-
-import venp.beans.PerfilBean;
 
 public class LoginForm extends ActionForm {
 

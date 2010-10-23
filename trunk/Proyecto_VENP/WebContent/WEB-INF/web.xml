@@ -13,8 +13,7 @@
  <filter-mapping>
   <filter-name>SessionFilter</filter-name>
   <servlet-name>action</servlet-name>
- </filter-mapping>
- -->
+ </filter-mapping>-->
  <listener>
   <listener-class>venp.listener.SessionVotantesListener</listener-class>
  </listener>

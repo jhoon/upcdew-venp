@@ -2,12 +2,11 @@ package venp.services;
 
 import java.util.ArrayList;
 
-import com.ibatis.dao.client.DaoManager;
-
 import venp.beans.PartidoPoliticoBean;
 import venp.dao.entities.PartidoPoliticoDAO;
-//import venp.dao.factory.DAOFactory;
 import venp.dao.factory.DaoConfig;
+
+import com.ibatis.dao.client.DaoManager;
 
 public class PartidoPoliticoService {
 
