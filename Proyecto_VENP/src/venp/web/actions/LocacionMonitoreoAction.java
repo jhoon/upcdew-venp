@@ -1,23 +1,16 @@
 package venp.web.actions;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Formatter;
-import java.util.Iterator;
-import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.struts.Globals;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
-import org.apache.struts.util.MessageResources;
 
-import venp.beans.LocacionBean;
 import venp.beans.UsuarioBean;
 import venp.services.LocacionService;
 import venp.web.forms.LocacionMonitoreoForm;

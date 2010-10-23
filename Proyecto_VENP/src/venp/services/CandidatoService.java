@@ -2,12 +2,11 @@ package venp.services;
 
 import java.util.ArrayList;
 
-import com.ibatis.dao.client.DaoManager;
-
 import venp.beans.CandidatoBean;
 import venp.dao.entities.CandidatoDAO;
-//import venp.dao.factory.DAOFactory;
 import venp.dao.factory.DaoConfig;
+
+import com.ibatis.dao.client.DaoManager;
 
 public class CandidatoService {
 

@@ -15,9 +15,9 @@ import org.apache.struts.actions.DispatchAction;
 
 import venp.beans.LocacionBean;
 import venp.beans.UsuarioBean;
+import venp.listener.SessionVotantesListener;
 import venp.services.LocacionService;
 import venp.web.forms.LocacionCerrarVotacionForm;
-import venp.listener.SessionVotantesListener;
 
 /**
  * Action que permite establecer cierre de votacion por cada uno de las locaciones

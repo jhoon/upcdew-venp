@@ -1,6 +1,5 @@
 package venp.beans;
 
-import java.util.ArrayList;
 
 public class DetalleEscrutinioBean extends Bean { 
 	

@@ -1,6 +1,5 @@
 package venp.beans;
 
-import java.util.Date;
 
 public class PerfilBean extends Bean {
 

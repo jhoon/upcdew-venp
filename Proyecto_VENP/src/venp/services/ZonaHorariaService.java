@@ -2,10 +2,10 @@ package venp.services;
 
 import java.util.ArrayList;
 
-import com.ibatis.dao.client.DaoManager;
-
 import venp.dao.entities.ZonaHorariaDAO;
 import venp.dao.factory.DaoConfig;
+
+import com.ibatis.dao.client.DaoManager;
 
 public class ZonaHorariaService {
 

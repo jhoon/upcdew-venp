@@ -2,12 +2,11 @@ package venp.services;
 
 import java.util.ArrayList;
 
-import com.ibatis.dao.client.DaoManager;
-
 import venp.beans.PaisBean;
 import venp.dao.entities.PaisDAO;
-//import venp.dao.factory.DAOFactory;
 import venp.dao.factory.DaoConfig;
+
+import com.ibatis.dao.client.DaoManager;
 
 public class PaisService {
 

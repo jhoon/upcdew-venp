@@ -3,6 +3,25 @@
   <groupId>Proyecto_VENP</groupId>
   <artifactId>Proyecto_VENP</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+  	<sourceDirectory>src</sourceDirectory>
+  	<outputDirectory>build</outputDirectory>
+  	<testOutputDirectory>build-test</testOutputDirectory>
+    <scriptSourceDirectory>build-test</scriptSourceDirectory>
+    <testSourceDirectory>test</testSourceDirectory>
+    <defaultGoal></defaultGoal>
+    <resources>
+      <resource>
+        <directory>src\venp\langs</directory>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>test</directory>
+      </testResource>
+    </testResources>
+    <directory>build</directory>
+  </build>
   <dependencies>
     <dependency>
       <groupId>antlr</groupId>
@@ -23,21 +42,36 @@
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
       <version>1.7.0</version>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>commons-logging</artifactId>
+      		<groupId>commons-logging</groupId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-chain</groupId>
       <artifactId>commons-chain</artifactId>
       <version>1.1</version>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>myfaces-api</artifactId>
+      		<groupId>myfaces</groupId>
+      	</exclusion>
+      	<exclusion>
+      		<artifactId>commons-digester</artifactId>
+      		<groupId>commons-digester</groupId>
+      	</exclusion>
+      	<exclusion>
+      		<artifactId>commons-logging</artifactId>
+      		<groupId>commons-logging</groupId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>
       <artifactId>commons-collections</artifactId>
       <version>3.2.1</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-digester</groupId>
-      <artifactId>commons-digester</artifactId>
-      <version>1.8</version>
     </dependency>
     <dependency>
       <groupId>commons-fileupload</groupId>
@@ -55,25 +89,19 @@
       <version>2.3</version>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
-      <artifactId>commons-logging</artifactId>
-      <version>1.0.4</version>
-    </dependency>
-    <dependency>
       <groupId>commons-validator</groupId>
       <artifactId>commons-validator</artifactId>
       <version>1.3.1</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.faces</groupId>
-      <artifactId>jsf-api</artifactId>
-      <version>1.2_02</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.faces</groupId>
-      <artifactId>jsf-impl</artifactId>
-      <version>1.2</version>
-      <classifier>NIGHTLY_20060227</classifier>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>commons-digester</artifactId>
+      		<groupId>commons-digester</groupId>
+      	</exclusion>
+      	<exclusion>
+      		<artifactId>commons-logging</artifactId>
+      		<groupId>commons-logging</groupId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>jstl</groupId>
@@ -89,6 +117,12 @@
       <groupId>org.apache.struts</groupId>
       <artifactId>struts-core</artifactId>
       <version>1.3.8</version>
+      <exclusions>
+      	<exclusion>
+      		<artifactId>commons-logging</artifactId>
+      		<groupId>commons-logging</groupId>
+      	</exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.struts</groupId>
@@ -112,6 +146,11 @@
     </dependency>
     <dependency>
       <groupId>org.apache.struts</groupId>
+      <artifactId>struts-scripting</artifactId>
+      <version>1.3.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.struts</groupId>
       <artifactId>struts-taglib</artifactId>
       <version>1.3.8</version>
     </dependency>
@@ -119,11 +158,6 @@
       <groupId>org.apache.struts</groupId>
       <artifactId>struts-tiles</artifactId>
       <version>1.3.8</version>
-    </dependency>
-    <dependency>
-      <groupId>org.xhtmlrenderer</groupId>
-      <artifactId>core-renderer</artifactId>
-      <version>R8pre2</version>
     </dependency>
     <dependency>
       <groupId>oro</groupId>
@@ -136,4 +170,5 @@
       <version>1.0.2</version>
     </dependency>
   </dependencies>
+
 </project>
