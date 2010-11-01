@@ -27,7 +27,7 @@
 		<table border="0" cellpadding="0" cellspacing="0" class="tableConcluido">
 		  <tr>
 		    <td width="45%" style="font-size: 16px; height: 50px;"><nested:write property="nombrePais" /></td>
-		    <td width="55%" style="background-color: #195093;" align="center">
+		    <td width="55%" style="background-color: #ab6383;" align="center">
 		      <nested:equal property="locacionCerrada" value="true">
 		        <nested:link styleClass="sendBtn" href="listaEscrutinio.do?cmd=listarDetalleLocacion" paramId="keyValue" paramProperty="codigo">
 		        <div class="div12"><bean:message key="listaEscrutinio.boton.generarEscrutinio" /></div>
