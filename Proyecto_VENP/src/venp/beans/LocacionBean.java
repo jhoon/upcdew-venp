@@ -258,5 +258,9 @@ public class LocacionBean extends Bean {
 	public void setLocacionesAbiertas(int locacionesAbiertas) {
 		this.locacionesAbiertas = locacionesAbiertas;
 	}
-
+	
+	public String toString(){		
+		return "Código:"+codigo+"/País:"+nombrePais+"/NombreCentroVotacion:"+nombreCentroVotacion;
+	}
+	
 }
