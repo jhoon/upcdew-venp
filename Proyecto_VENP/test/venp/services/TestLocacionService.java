@@ -28,4 +28,6 @@ public class TestLocacionService extends TestCase {
 		} catch (Exception e) {
 		}
 	}
+	
+	
 }
