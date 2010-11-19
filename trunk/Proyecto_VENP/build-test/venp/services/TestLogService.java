@@ -7,17 +7,16 @@ import venp.services.LogService;
 
 public class TestLogService extends TestCase {
 	
+	LogService serviceLog;
+	
 	@Test
 	public void LogTest(){
-		LogService serviceLog = new LogService();	
 		
 		try {
 			serviceLog.insertar("15", "1");
+			assertNotNull(serviceLog);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-
 		
 	}
 	
