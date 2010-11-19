@@ -15,8 +15,17 @@ public class TestLocacionService extends TestCase {
 		try {
 			assertNotNull(locacion.listarLocacionesCerradas());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+		}
+
+		
+	}
+	
+	@Test
+	public void testLocacionesActivasPorUsuario(){
+		try {
+			assertNotNull(locacion.locacionesActivasPorUsuarioPuestaCero(1));
+		} catch (Exception e) {
 		}
 	}
 }
