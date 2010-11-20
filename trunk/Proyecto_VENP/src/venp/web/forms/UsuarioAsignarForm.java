@@ -28,6 +28,7 @@ public class UsuarioAsignarForm extends ActionForm {
 	private String cvOrigen;
 	private String cvDestino;
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		procesoElectoral = null;
 		pais = null;

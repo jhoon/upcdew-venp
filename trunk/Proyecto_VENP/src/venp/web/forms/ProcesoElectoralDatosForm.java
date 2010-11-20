@@ -202,6 +202,7 @@ public class ProcesoElectoralDatosForm extends ActionForm {
 		return finalTime;
 	}
 	
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "-1";
 		usuario = "-1";

@@ -18,6 +18,7 @@ import venp.web.forms.PartidoPoliticoAsignarForm;
 
 public class PartidoPoliticoAsignarAction extends DispatchAction {
 	
+	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

@@ -44,6 +44,7 @@ public class PaisDatosForm extends ActionForm {
 		this.abreviatura = abreviatura;
 	}
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "";
 		nombre = "";

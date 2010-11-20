@@ -30,6 +30,7 @@ public class VotacionAction extends DispatchAction {
 	 * @return
 	 * @throws Exception
 	 */
+	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -112,11 +113,11 @@ public class VotacionAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ElectorService service = new ElectorService();
-		ElectorForm bean = service.validarDNI((String)request.getParameter("elector"));
+		ElectorForm bean = service.validarDNI(request.getParameter("elector"));
 		String strMode = request.getParameter("mode");
-		bean.setFechaSufragio((String)request.getParameter("fecha"));
-		bean.setHoraSufragio((String)request.getParameter("hora"));
-		bean.setGmtSufragio((String)request.getParameter("gmt"));
+		bean.setFechaSufragio(request.getParameter("fecha"));
+		bean.setHoraSufragio(request.getParameter("hora"));
+		bean.setGmtSufragio(request.getParameter("gmt"));
 		if(strMode.equals("mail")){			
 			VenpMail mailClient = new VenpMail(bean,request);
 			(new Thread(mailClient)).start();

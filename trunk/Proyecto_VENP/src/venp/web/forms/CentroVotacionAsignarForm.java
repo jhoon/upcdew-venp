@@ -25,6 +25,7 @@ public class CentroVotacionAsignarForm extends ActionForm {
 	private String nombrePE;
 	private String selectedPEId;
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		procesoElectoral = null;
 		procesoElectoralId = "";

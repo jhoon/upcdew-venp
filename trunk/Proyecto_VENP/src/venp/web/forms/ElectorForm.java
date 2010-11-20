@@ -43,7 +43,7 @@ public class ElectorForm extends ActionForm {
 	}
 
 	public void setConsulados(ArrayList consulados) {
-		this.consulados = consulados;
+		ElectorForm.consulados = consulados;
 	}
 
 	public ArrayList getPaises() {
@@ -51,7 +51,7 @@ public class ElectorForm extends ActionForm {
 	}
 
 	public void setPaises(ArrayList paises) {
-		this.paises = paises;
+		ElectorForm.paises = paises;
 	}
 
 	public int getPaisId() {

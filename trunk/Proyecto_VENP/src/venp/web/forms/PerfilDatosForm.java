@@ -44,6 +44,7 @@ public class PerfilDatosForm extends ActionForm {
 		this.descripcion = descripcion;
 	}
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "";
 		nombre = "";
