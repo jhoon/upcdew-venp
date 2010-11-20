@@ -100,6 +100,7 @@ public class CentroVotacionDatosForm extends ActionForm {
 		this.direccion = direccion;
 	}
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "";
 		pais = null;

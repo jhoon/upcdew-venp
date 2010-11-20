@@ -1,6 +1,5 @@
 package venp.services;
 
-import static org.junit.Assert.*;
 import junit.framework.TestCase;
 import org.junit.Test;
 import venp.services.LocacionService;

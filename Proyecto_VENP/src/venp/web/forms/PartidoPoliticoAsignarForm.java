@@ -21,6 +21,7 @@ public class PartidoPoliticoAsignarForm extends ActionForm {
 	private String cvOrigen;
 	private String cvDestino;
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "";
 		nombre = "";

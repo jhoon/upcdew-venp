@@ -29,6 +29,7 @@ public class ElectorAction extends DispatchAction {
 	 * @return redirecciona hacia votacionBuscarDni.jsp(buscar_dni), para validarlo.
 	 * @throws Exception
 	 */
+	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

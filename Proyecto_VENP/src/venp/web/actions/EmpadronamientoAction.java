@@ -16,6 +16,7 @@ import venp.web.forms.ElectorForm;
 
 public class EmpadronamientoAction extends DispatchAction {
 
+	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

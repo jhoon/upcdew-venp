@@ -23,6 +23,7 @@ public class UsuarioDatosForm extends ActionForm {
 	private String password;
 	private String repassword;
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		codigo = "";
 		perfil = null;

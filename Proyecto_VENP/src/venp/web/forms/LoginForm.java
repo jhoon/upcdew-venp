@@ -35,6 +35,7 @@ public class LoginForm extends ActionForm {
 		this.acceso = acceso;
 	}
 
+	@Override
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		userName ="";
 		password ="";			
