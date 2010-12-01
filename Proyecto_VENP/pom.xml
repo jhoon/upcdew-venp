@@ -3,6 +3,12 @@
   <groupId>Proyecto_VENP</groupId>
   <artifactId>Proyecto_VENP</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+ 	<properties>
+		<org.springframework.version>3.0.0.RELEASE</org.springframework.version>
+		<org.slf4j.version>1.5.10</org.slf4j.version>
+	</properties>
+  
   <build>
   	<sourceDirectory>src</sourceDirectory>
   	<outputDirectory>build</outputDirectory>
@@ -23,6 +29,25 @@
     <directory>build</directory>
   </build>
   <dependencies>
+  	<!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>org.springframework.context</artifactId>
+		<version>${org.springframework.version}</version>
+		<exclusions>
+			<!-- Exclude Commons Logging in favor of SLF4j -->
+			<exclusion>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>com.springsource.org.apache.commons.logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>org.springframework.jdbc</artifactId>
+		<version>${org.springframework.version}</version>
+	</dependency>
+	
     <dependency>
       <groupId>antlr</groupId>
       <artifactId>antlr</artifactId>
@@ -179,30 +204,43 @@
 	 <dependency>
 	  <groupId>org.easymock</groupId>
 	  <artifactId>easymock</artifactId>
-	  <version>2.4</version>
+	  <version>2.2</version>
 	</dependency>
-	<!-- Dependencias de Spring Framework-->
 	<dependency>
 		<groupId>org.springframework</groupId>
-		<artifactId>spring-webmvc</artifactId>
-        <version>3.0.3.RELEASE</version>
-    </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>3.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>3.0.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>3.0.3.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
+		<artifactId>org.springframework.test</artifactId>
+		<version>${org.springframework.version}</version>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>com.jamonapi</groupId>
+		<artifactId>jamon</artifactId>
+		<version>2.4</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
+	<!-- Dependencias de Spring Framework-->
+<!--	<dependency>-->
+<!--		<groupId>org.springframework</groupId>-->
+<!--		<artifactId>spring-webmvc</artifactId>-->
+<!--        <version>3.0.3.RELEASE</version>-->
+<!--    </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-jdbc</artifactId>-->
+<!--            <version>3.0.3.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-orm</artifactId>-->
+<!--            <version>3.0.3.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-test</artifactId>-->
+<!--            <version>3.0.3.RELEASE</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
   </dependencies>
 
 </project>
