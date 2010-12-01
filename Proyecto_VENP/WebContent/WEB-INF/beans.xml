@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+<!--  <bean id="bookService" class="ca.nexcel.books.business.BookServiceImpl"/>-->
+
+  <bean id="candidatoService" class="venp.services.CandidatoService" />
+  <bean id="cedulaService" class="venp.services.CandidatoService" />
+  <bean id="centroVotacionService" class="venp.services.CandidatoService" />
+  <bean id="consolidacionService" class="venp.services.CandidatoService" />
+  <bean id="electorService" class="venp.services.CandidatoService" />
+  <bean id="escrutinioService" class="venp.services.CandidatoService" />
+  <bean id="locacionService" class="venp.services.CandidatoService" />
+  <bean id="logService" class="venp.services.CandidatoService" />
+  <bean id="paisService" class="venp.services.CandidatoService" />
+  <bean id="partidoPoliticoService" class="venp.services.CandidatoService" />
+  <bean id="perfilService" class="venp.services.CandidatoService" />
+  <bean id="procesoElectoralService" class="venp.services.CandidatoService" />
+  <bean id="usuarioService" class="venp.services.CandidatoService" />
+  <bean id="zonaHorariaService" class="venp.services.CandidatoService" />
+  
+  <!-- interceptors cannot reach Struts action because its not under Spring's control -->
+
+</beans>
