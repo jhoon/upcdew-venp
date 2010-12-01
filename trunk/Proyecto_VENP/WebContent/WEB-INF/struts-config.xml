@@ -291,5 +291,10 @@
 		<set-property property="pathnames"
 			value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml" />
 	</plug-in>
+		
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+	    <set-property property="contextConfigLocation" 
+	    	value="/WEB-INF/beans.xml"/>
+	 </plug-in>
 
 </struts-config>
