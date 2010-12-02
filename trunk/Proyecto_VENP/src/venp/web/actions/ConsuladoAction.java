@@ -10,15 +10,24 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.DispatchAction;
-import org.springframework.web.struts.ActionSupport;
-
 
 import venp.services.ElectorService;
 import venp.web.forms.ElectorForm;
 
-public class ConsuladoAction extends ActionSupport {
+public class ConsuladoAction extends DispatchAction {
 
-	public ActionForward execute(ActionMapping mapping, ActionForm form,
+	private ElectorService service;
+
+	public void setService(ElectorService service) {
+		this.service = service;
+	}
+
+	public ElectorService getService() {
+		return service;
+	}	
+	
+	@Override
+	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		if (!LoginAction.isValidSession(request))
@@ -35,7 +44,7 @@ public class ConsuladoAction extends ActionSupport {
 			return mapping.findForward("login");
 		// busca por el dni enviado
 		ElectorForm frm = (ElectorForm) form;
-		ElectorService service = (ElectorService)getWebApplicationContext().getBean("electorService");//new ElectorService();
+		ElectorService service = new ElectorService();
 		ElectorForm elector = service.validarDNI(frm.getDni());
 		if (elector != null) {
 			// validacion de proceso electoral activo
