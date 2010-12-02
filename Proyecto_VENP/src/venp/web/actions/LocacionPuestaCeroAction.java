@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 import org.apache.struts.actions.DispatchAction;
+import org.springframework.web.struts.ActionSupport;
 
 import venp.beans.LocacionBean;
 import venp.beans.UsuarioBean;
@@ -24,7 +25,7 @@ import venp.web.forms.LocacionPuestaCeroForm;
  * @author MCristobal
  *
  */
-public class LocacionPuestaCeroAction extends DispatchAction {
+public class LocacionPuestaCeroAction extends ActionSupport {
 
 	/**
 	 * Action de listado de locaciones activas en el proceso electoral
@@ -37,7 +38,7 @@ public class LocacionPuestaCeroAction extends DispatchAction {
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
+System.out.println("This is a test!!!");
 		HttpSession session = request.getSession();
 		UsuarioBean bean = (UsuarioBean) session.getAttribute("usuarioBean");
 		LocacionPuestaCeroForm frm = (LocacionPuestaCeroForm) form;
@@ -119,7 +120,7 @@ public class LocacionPuestaCeroAction extends DispatchAction {
 	 * @throws Exception
 	 */
 	private ArrayList locacionesActivasPorUsuarioPuestaCero(int intUsuario) throws Exception {
-		LocacionService service = new LocacionService();
+		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
 		ArrayList lista = null;
 
 		lista = service.locacionesActivasPorUsuarioPuestaCero(intUsuario);
@@ -128,7 +129,7 @@ public class LocacionPuestaCeroAction extends DispatchAction {
 	}
 	
 	private LocacionBean locacionActivaPorUsuarioPuestaCero(int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = new LocacionService();
+		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
 
 		LocacionBean bean = service.locacionActivaPorUsuarioPuestaCero(intUsuario, intLocacion);
 
@@ -143,7 +144,7 @@ public class LocacionPuestaCeroAction extends DispatchAction {
 	 * @throws Exception
 	 */
 	private boolean puestaCero(int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = new LocacionService();
+		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
 		
 		return service.puestaCero(intUsuario, intLocacion);
 	}

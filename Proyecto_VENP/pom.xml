@@ -3,7 +3,6 @@
   <groupId>Proyecto_VENP</groupId>
   <artifactId>Proyecto_VENP</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
   <build>
   	<sourceDirectory>src</sourceDirectory>
   	<outputDirectory>build</outputDirectory>
@@ -24,8 +23,6 @@
     <directory>build</directory>
   </build>
   <dependencies>
-  	
-	
     <dependency>
       <groupId>antlr</groupId>
       <artifactId>antlr</artifactId>
@@ -182,9 +179,14 @@
 	 <dependency>
 	  <groupId>org.easymock</groupId>
 	  <artifactId>easymock</artifactId>
-	  <version>2.2</version>
+	  <version>2.4</version>
 	</dependency>
-	
+	<!-- Dependencias de Spring Framework-->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+        <version>3.0.3.RELEASE</version>
+    </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -202,10 +204,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-		  <groupId>org.springframework</groupId>
-		  <artifactId>spring-struts</artifactId>
-		  <version>3.0.3.RELEASE</version>
-		</dependency>
+        	<groupId>org.springframework</groupId>
+        	<artifactId>spring-struts</artifactId>
+        	<version>3.0.3.RELEASE</version>
+        	<type>jar</type>
+        	<scope>compile</scope>
+        </dependency>
   </dependencies>
 
 </project>
