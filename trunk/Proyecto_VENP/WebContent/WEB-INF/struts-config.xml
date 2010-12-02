@@ -163,7 +163,7 @@
 
 		<action path="/locacionPuestaCero" name="locacionPuestaCeroForm"
 			input="puestaCero" parameter="cmd"
-			type="venp.web.actions.LocacionPuestaCeroAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="puestaCero" />
 			<forward name="listado" path="/locacionPuestaCero.do?cmd=listar" />
 		</action>
