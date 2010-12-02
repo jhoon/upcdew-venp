@@ -26,6 +26,16 @@ import venp.web.forms.LocacionCerrarVotacionForm;
  */
 public class LocacionCerrarVotacionAction extends DispatchAction {
 
+	public LocacionService service;
+	
+	public void setService(LocacionService service) {
+		this.service = service;
+	}
+
+	public LocacionService getService() {
+		return service;
+	}
+
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -105,7 +115,7 @@ public class LocacionCerrarVotacionAction extends DispatchAction {
 	 * @throws Exception
 	 */
 	private ArrayList locacionesPorUsuarioCerrarVotacion(int intUsuario) throws Exception {
-		LocacionService service = new LocacionService();
+//		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");// new LocacionService();
 		ArrayList lista = null;
 		
 		lista = service.locacionesPorUsuarioCerrarVotacion(intUsuario);
@@ -121,7 +131,7 @@ public class LocacionCerrarVotacionAction extends DispatchAction {
 	 * @throws Exception
 	 */
 	private LocacionBean locacionPorUsuarioCerrarVotacion(int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = new LocacionService();
+//		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");// new LocacionService();
 		
 		return service.locacionPorUsuarioCerrarVotacion(intUsuario, intLocacion);
 	}
@@ -134,7 +144,7 @@ public class LocacionCerrarVotacionAction extends DispatchAction {
 	 * @throws Exception
 	 */
 	private boolean cerrarVotacionLoc (int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = new LocacionService();
+//		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");// new LocacionService();
 		
 		return service.cerrarVotacion(intUsuario, intLocacion);
 	}
