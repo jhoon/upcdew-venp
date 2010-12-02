@@ -12,7 +12,6 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 import org.apache.struts.actions.DispatchAction;
-import org.springframework.web.struts.ActionSupport;
 
 import venp.beans.LocacionBean;
 import venp.beans.UsuarioBean;
@@ -25,7 +24,17 @@ import venp.web.forms.LocacionPuestaCeroForm;
  * @author MCristobal
  *
  */
-public class LocacionPuestaCeroAction extends ActionSupport {
+public class LocacionPuestaCeroAction extends DispatchAction {
+	
+	private LocacionService service;
+		
+	public LocacionService getService() {
+		return service;
+	}
+
+	public void setService(LocacionService service) {
+		this.service = service;
+	}
 
 	/**
 	 * Action de listado de locaciones activas en el proceso electoral
@@ -38,7 +47,7 @@ public class LocacionPuestaCeroAction extends ActionSupport {
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-System.out.println("This is a test!!!");
+		
 		HttpSession session = request.getSession();
 		UsuarioBean bean = (UsuarioBean) session.getAttribute("usuarioBean");
 		LocacionPuestaCeroForm frm = (LocacionPuestaCeroForm) form;
@@ -120,20 +129,11 @@ System.out.println("This is a test!!!");
 	 * @throws Exception
 	 */
 	private ArrayList locacionesActivasPorUsuarioPuestaCero(int intUsuario) throws Exception {
-		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
-		ArrayList lista = null;
-
-		lista = service.locacionesActivasPorUsuarioPuestaCero(intUsuario);
-
-		return lista;
+		return service.locacionesActivasPorUsuarioPuestaCero(intUsuario);
 	}
 	
 	private LocacionBean locacionActivaPorUsuarioPuestaCero(int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
-
-		LocacionBean bean = service.locacionActivaPorUsuarioPuestaCero(intUsuario, intLocacion);
-
-		return bean;
+		return service.locacionActivaPorUsuarioPuestaCero(intUsuario, intLocacion);
 	}
 	
 	/**
@@ -144,8 +144,6 @@ System.out.println("This is a test!!!");
 	 * @throws Exception
 	 */
 	private boolean puestaCero(int intUsuario, int intLocacion) throws Exception {
-		LocacionService service = (LocacionService)getWebApplicationContext().getBean("locacionService");//new LocacionService();
-		
 		return service.puestaCero(intUsuario, intLocacion);
 	}
 

@@ -26,7 +26,7 @@ import venp.web.forms.LocacionCerrarVotacionForm;
  */
 public class LocacionCerrarVotacionAction extends DispatchAction {
 
-	public LocacionService service;
+	private LocacionService service;
 	
 	public void setService(LocacionService service) {
 		this.service = service;

@@ -25,6 +25,12 @@
 	</property>
   </bean>
   
+  <bean name="/locacionPuestaCero" class="venp.web.actions.LocacionPuestaCeroAction" >
+  	<property name="service">
+	  <ref local="locacionService"/>
+	</property>
+  </bean>
+  
   <!-- interceptors cannot reach Struts action because its not under Spring's control -->
 
 </beans>
