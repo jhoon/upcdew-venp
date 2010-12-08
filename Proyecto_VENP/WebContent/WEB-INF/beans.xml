@@ -86,6 +86,114 @@
 	</property>
   </bean>
   
+  <bean name="/candidatoDatos" class="venp.web.actions.CandidatoDatosAction" >
+  	<property name="service">
+	  <ref local="candidatoService"/>
+	</property>
+  </bean>
+  
+  <bean name="/candidatoLista" class="venp.web.actions.CandidatoListaAction" >
+  	<property name="service">
+	  <ref local="candidatoService"/>
+	</property>
+  </bean>
+  
+  <bean name="/centrovotacionAsignar" class="venp.web.actions.CentroVotacionAsignarAction" >
+  	<property name="peService">
+	  <ref local="procesoElectoralService"/>
+	</property>
+	<property name="paService">
+	  <ref local="paisService"/>
+	</property>
+	<property name="cvService">
+	  <ref local="centroVotacionService"/>
+	</property>
+  </bean>
+  
+  <bean name="/centrovotacionDatos" class="venp.web.actions.CentroVotacionDatosAction" >
+  	<property name="cvService">
+	  <ref local="centroVotacionService"/>
+	</property>
+	<property name="paService">
+	  <ref local="paisService"/>
+	</property>
+	<property name="zhService">
+	  <ref local="zonaHorariaService"/>
+	</property>
+  </bean>
+  
+  <bean name="/centrovotacionLista" class="venp.web.actions.CentroVotacionListaAction" >
+  	<property name="service">
+	  <ref local="centroVotacionService"/>
+	</property>
+  </bean>
+  
+  <bean name="/listaConsolidacion" class="venp.web.actions.ConsolidacionAction" >
+  	<property name="servLocacion">
+	  <ref local="locacionService"/>
+	</property>
+	<property name="servProc">
+	  <ref local="procesoElectoralService"/>
+	</property>
+	<property name="services">
+	  <ref local="consolidacionService"/>
+	</property>
+  </bean>
+  
+  <bean name="/consulado" class="venp.web.actions.ConsuladoAction" >
+  	<property name="service">
+	  <ref local="electorService"/>
+	</property>
+  </bean>
+  
+  <bean name="/elector" class="venp.web.actions.ElectorAction" >
+  	<property name="procesoService">
+	  <ref local="procesoElectoralService"/>
+	</property>
+	<property name="electorService">
+	  <ref local="electorService"/>
+	</property>
+  </bean>
+  
+  <bean name="/usuarioLista" class="venp.web.actions.UsuarioListaAction" >
+  	<property name="service">
+	  <ref local="usuarioService"/>
+	</property>
+  </bean>
+  
+  <bean name="/usuarioAsignar" class="venp.web.actions.UsuarioAsignarAction" >
+  	<property name="procesoService">
+	  <ref local="procesoElectoralService"/>
+	</property>
+	<property name="paisService">
+	  <ref local="paisService"/>
+	</property>
+	<property name="usuarioService">
+	  <ref local="usuarioService"/>
+	</property>
+	<property name="centroService">
+	  <ref local="centroVotacionService"/>
+	</property>
+  </bean>
+  
+  <bean name="/procesoElectoralLista" class="venp.web.actions.ProcesoElectoralListaAction" >
+  	<property name="service">
+	  <ref local="procesoElectoralService"/>
+	</property>
+  </bean>
+  
+  <bean name="/perfilLista" class="venp.web.actions.PerfilListaAction" >
+  	<property name="service">
+	  <ref local="perfilService"/>
+	</property>
+  </bean>
+  
+  <bean name="/locacionMonitoreo" class="venp.web.actions.LocacionMonitoreoAction" >
+  	<property name="service">
+	  <ref local="locacionService"/>
+	</property>
+  </bean>
+  
   <!-- interceptors cannot reach Struts action because its not under Spring's control -->
 
 </beans>
