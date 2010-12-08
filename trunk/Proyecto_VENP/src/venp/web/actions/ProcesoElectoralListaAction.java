@@ -18,7 +18,17 @@ import venp.services.ProcesoElectoralService;
 import venp.web.forms.ProcesoElectoralListaForm;
 
 public class ProcesoElectoralListaAction extends DispatchAction {
-		
+	
+	private ProcesoElectoralService service;
+	
+	public ProcesoElectoralService getService() {
+		return service;
+	}
+
+	public void setService(ProcesoElectoralService service) {
+		this.service = service;
+	}	
+	
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

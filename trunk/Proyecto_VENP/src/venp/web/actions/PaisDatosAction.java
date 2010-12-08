@@ -11,10 +11,22 @@ import org.apache.struts.action.ActionMessages;
 import org.apache.struts.actions.DispatchAction;
 
 import venp.beans.PaisBean;
+import venp.services.LocacionService;
 import venp.services.PaisService;
 import venp.web.forms.PaisDatosForm;
 
 public class PaisDatosAction extends DispatchAction {
+	
+	
+	private PaisService service;
+	
+	public PaisService getService() {
+		return service;
+	}
+
+	public void setService(PaisService service) {
+		this.service = service;
+	}
 
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)

@@ -21,6 +21,17 @@ import venp.web.forms.PartidoPoliticoDatosForm;
 
 public class PartidoPoliticoDatosAction extends DispatchAction {
 
+	private PartidoPoliticoService service;
+	
+	public PartidoPoliticoService getService() {
+		return service;
+	}
+
+	public void setService(PartidoPoliticoService service) {
+		this.service = service;
+	}
+	
+	
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

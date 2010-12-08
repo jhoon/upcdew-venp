@@ -18,6 +18,16 @@ import venp.web.forms.ProcesoElectoralDatosForm;
 
 public class ProcesoElectoralDatosAction extends DispatchAction {
 
+	private ProcesoElectoralService service;
+	
+	public ProcesoElectoralService getService() {
+		return service;
+	}
+
+	public void setService(ProcesoElectoralService service) {
+		this.service = service;
+	}
+	
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

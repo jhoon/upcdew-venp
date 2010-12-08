@@ -120,7 +120,7 @@
 
 		<action path="/partidoPoliticoDatos" name="partidoPoliticoDatosForm"
 			input="/partidoPoliticoDatos.jsp" parameter="cmd"
-			type="venp.web.actions.PartidoPoliticoDatosAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="ppDatos" />
 			<forward name="listado" path="/partidoPoliticoLista.do?cmd=listar" />
 			<forward name="asignar" path="/partidoPoliticoAsignar.do" />
@@ -128,7 +128,7 @@
 
 		<action path="/partidoPoliticoAsignar" name="partidoPoliticoAsignarForm"
 			input="/partidoPoliticoAsignar.jsp" parameter="cmd"
-			type="venp.web.actions.PartidoPoliticoAsignarAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="ppAsignar" />
 			<forward name="listado" path="/partidoPoliticoLista.do?cmd=listar" />
 		</action>
@@ -240,30 +240,30 @@
 		</action>
 
 		<action path="/perfilLista" name="perfilListaForm" input="/adm_central/perfilLista.jsp"
-			parameter="cmd" type="venp.web.actions.PerfilListaAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="perfilLista" />
 		</action>
 
 		<action path="/perfilDatos" name="perfilDatosForm" input="/adm_central/perfilDatos.jsp"
-			parameter="cmd" type="venp.web.actions.PerfilDatosAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="perfilDatos" />
 			<forward name="listado" path="/perfilLista.do?cmd=listar" />
 		</action>
 
 		<action path="/paisLista" name="paisListaForm" input="/adm_central/paisLista.jsp"
-			parameter="cmd" type="venp.web.actions.PaisListaAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="paisLista" />
 		</action>
 
 		<action path="/paisDatos" name="paisDatosForm" input="/adm_central/paisDatos.jsp"
-			parameter="cmd" type="venp.web.actions.PaisDatosAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="paisDatos" />
 			<forward name="listado" path="/paisLista.do?cmd=listar" />
 		</action>
 
 		<action path="/procesoElectoralLista" name="procesoElectoralListaForm"
 			input="/adm_central/procesosElectoralLista.jsp" parameter="cmd"
-			type="venp.web.actions.ProcesoElectoralListaAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="peLista" />
 			<forward name="activar" path="/procesoElectoralLista.do" />
 			<forward name="anular" path="/procesoElectoralLista.do" />
@@ -271,7 +271,7 @@
 
 		<action path="/procesoElectoralDatos" name="procesoElectoralDatosForm"
 			input="/adm_central/procesoElectoralDatos.jsp" parameter="cmd"
-			type="venp.web.actions.ProcesoElectoralDatosAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="peDatos" />
 			<forward name="guardar" path="/procesoElectoralDatos.do" />
 			<forward name="listado" path="/procesoElectoralLista.do?cmd=listar" />
