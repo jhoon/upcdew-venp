@@ -16,6 +16,26 @@ import venp.services.ProcesoElectoralService;
 import venp.web.forms.ElectorForm;
 
 public class ElectorAction extends DispatchAction {
+	
+	ProcesoElectoralService procesoService;
+	
+	ElectorService electorService;
+
+	public ProcesoElectoralService getProcesoService() {
+		return procesoService;
+	}
+
+	public void setProcesoService(ProcesoElectoralService procesoService) {
+		this.procesoService = procesoService;
+	}
+
+	public ElectorService getElectorService() {
+		return electorService;
+	}
+
+	public void setElectorService(ElectorService electorService) {
+		this.electorService = electorService;
+	}
 
 	/**
 	 * corresponde a votacionBuscarDni.jsp. Sirve para validar si 
@@ -35,8 +55,7 @@ public class ElectorAction extends DispatchAction {
 			throws Exception {
 		ElectorForm frm = (ElectorForm)form;
 		frm.reset();
-		ElectorService service = new ElectorService();
-		int intIdProceso = service.getProcesoActivo();
+		int intIdProceso = electorService.getProcesoActivo();
 		if(intIdProceso == 0) {
 			ActionErrors errors = new ActionErrors();
 			errors.add("error", new ActionMessage("elector.error.noproceso"));
@@ -68,8 +87,7 @@ public class ElectorAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ElectorForm frm = (ElectorForm)form;
-		ElectorService service = new ElectorService();
-		ElectorForm bean = service.validarDNI(frm.getDni());
+		ElectorForm bean = electorService.validarDNI(frm.getDni());
 		if(bean == null) {
 			ActionErrors errors = new ActionErrors();
 			errors.add("dni", new ActionMessage("elector.validadni.error"));
@@ -81,7 +99,7 @@ public class ElectorAction extends DispatchAction {
 			if(bean.getEstado().equals("A") || bean.getEstado().equals("L")) {
 				HttpSession session = request.getSession();
 				int intIdProceso = ((Integer)session.getAttribute("intIdProceso")).intValue();
-				if(service.isVotoEnRango(intIdProceso, Integer.parseInt(bean.getId()))) {
+				if(electorService.isVotoEnRango(intIdProceso, Integer.parseInt(bean.getId()))) {
 					session.setAttribute("Elector", bean);
 					return mapping.findForward("validar_pin");
 				}
@@ -117,15 +135,13 @@ public class ElectorAction extends DispatchAction {
 		// form
 		ElectorForm frm = (ElectorForm)form;
 		// service
-		ElectorService service = new ElectorService();
 		// session
 		HttpSession session = request.getSession();
 		ElectorForm bean = (ElectorForm)session.getAttribute("Elector");
 		
-		if(service.isValidPIN(bean.getId(), frm.getPin().trim())) {
+		if(electorService.isValidPIN(bean.getId(), frm.getPin().trim())) {
 			int intIdProceso = ((Integer)session.getAttribute("intIdProceso")).intValue();
-			ProcesoElectoralService service2 = new ProcesoElectoralService();
-			int intTiempoSession = service2.findByPrimaryKey(intIdProceso).getTiempoSesion();
+			int intTiempoSession = procesoService.findByPrimaryKey(intIdProceso).getTiempoSesion();
 			session.setMaxInactiveInterval(intTiempoSession * 60);
 			//return mapping.findForward("votar");
 			response.sendRedirect("votacion.do?cmd=cedula");

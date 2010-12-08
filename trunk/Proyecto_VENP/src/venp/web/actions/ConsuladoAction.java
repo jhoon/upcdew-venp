@@ -44,7 +44,6 @@ public class ConsuladoAction extends DispatchAction {
 			return mapping.findForward("login");
 		// busca por el dni enviado
 		ElectorForm frm = (ElectorForm) form;
-		ElectorService service = new ElectorService();
 		ElectorForm elector = service.validarDNI(frm.getDni());
 		if (elector != null) {
 			// validacion de proceso electoral activo
@@ -93,7 +92,6 @@ public class ConsuladoAction extends DispatchAction {
 			throws Exception {
 		ElectorForm frm = (ElectorForm) form;
 		// Instancia del servicio
-		ElectorService service = new ElectorService();
 		// validacion de proceso electoral activo
 		int idProceso = service.getEmpadronamientoActivo();
 		// Si esta en el rango, puede empadronarse
@@ -120,7 +118,6 @@ public class ConsuladoAction extends DispatchAction {
 			throws Exception {
 		ElectorForm frm = (ElectorForm) form;
 		// Intancia del servicio
-		ElectorService service = new ElectorService();
 		// se validan los datos del empadronado (no duplucidad del DNI)
 		ElectorForm bean;
 		if (frm.getId().equals("0"))

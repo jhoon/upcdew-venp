@@ -14,6 +14,16 @@ import venp.services.CandidatoService;
 import venp.web.forms.CandidatoListaForm;
 
 public class CandidatoListaAction extends DispatchAction {
+	
+	CandidatoService service;
+	
+	public CandidatoService getService() {
+		return service;
+	}
+
+	public void setService(CandidatoService service) {
+		this.service = service;
+	}
 
 	public ActionForward borrar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -40,12 +50,10 @@ public class CandidatoListaAction extends DispatchAction {
 	}
 
 	private void borrar(int codigo) throws Exception {
-		CandidatoService service = new CandidatoService();
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		CandidatoService service = new CandidatoService();
 		return service.listarTodos();
 	}
 

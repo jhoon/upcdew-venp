@@ -22,6 +22,16 @@ import venp.web.forms.LocacionMonitoreoForm;
  * 
  */
 public class LocacionMonitoreoAction extends DispatchAction {
+	
+	LocacionService service;
+
+	public LocacionService getService() {
+		return service;
+	}
+
+	public void setService(LocacionService service) {
+		this.service = service;
+	}
 
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -61,7 +71,6 @@ public class LocacionMonitoreoAction extends DispatchAction {
 	 */
 	private ArrayList locacionesPorUsuarioMonitoreo(int usuario)
 			throws Exception {
-		LocacionService service = new LocacionService();
 		ArrayList lista = null;
 
 		lista = service.locacionesPorUsuarioMonitoreo(usuario);

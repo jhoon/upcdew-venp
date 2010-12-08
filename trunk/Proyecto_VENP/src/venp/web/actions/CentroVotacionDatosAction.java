@@ -16,11 +16,42 @@ import venp.beans.CentroVotacionBean;
 import venp.beans.PaisBean;
 import venp.beans.ZonaHorariaBean;
 import venp.services.CentroVotacionService;
+import venp.services.LocacionService;
 import venp.services.PaisService;
 import venp.services.ZonaHorariaService;
 import venp.web.forms.CentroVotacionDatosForm;
 
 public class CentroVotacionDatosAction extends DispatchAction {
+	
+	CentroVotacionService cvService;
+	
+	PaisService paService;
+	
+	ZonaHorariaService zhService;
+	
+	public ZonaHorariaService getZhService() {
+		return zhService;
+	}
+
+	public void setZhService(ZonaHorariaService service) {
+		this.zhService = service;
+	}
+	
+	public PaisService getPaService() {
+		return paService;
+	}
+
+	public void setPaService(PaisService service) {
+		this.paService = service;
+	}
+
+	public CentroVotacionService getCvService() {
+		return cvService;
+	}
+
+	public void setCvService(CentroVotacionService service) {
+		this.cvService = service;
+	}
 
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -165,44 +196,35 @@ public class CentroVotacionDatosAction extends DispatchAction {
 	}
 
 	private void editar(CentroVotacionBean bean) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
-		service.editar(bean);
+		cvService.editar(bean);
 	}
 
 	private CentroVotacionBean findByPrimaryKey(String codigo) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
-		CentroVotacionBean bean = service.findByPrimaryKey(Integer.parseInt(codigo));
+		CentroVotacionBean bean = cvService.findByPrimaryKey(Integer.parseInt(codigo));
 
 		return bean;
 	}
 
 	private boolean findByName(String nombre, int codigoPais) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 		
-		return service.findByName(nombre, codigoPais);
+		return cvService.findByName(nombre, codigoPais);
 	}
 
 	private boolean findByName(String nombre, int codigoPais, int codigo) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 		
-		return service.findByName(nombre, codigoPais, codigo);
+		return cvService.findByName(nombre, codigoPais, codigo);
 	}
 
 	private void insertar(CentroVotacionBean bean) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
-		service.insertar(bean);
+		cvService.insertar(bean);
 	}
 
-	private ArrayList findAll_Pais() throws Exception {
-		PaisService service = new PaisService();
-		
-		return service.findAll();
+	private ArrayList findAll_Pais() throws Exception {		
+		return paService.findAll();
 	}
 
-	private ArrayList findAll_ZonaHoraria() throws Exception {
-		ZonaHorariaService service = new ZonaHorariaService();
-		
-		return service.findAll();
+	private ArrayList findAll_ZonaHoraria() throws Exception {		
+		return zhService.findAll();
 	}
 
 }
