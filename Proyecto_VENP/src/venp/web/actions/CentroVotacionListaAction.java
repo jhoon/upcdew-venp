@@ -11,9 +11,20 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
 import venp.services.CentroVotacionService;
+import venp.services.LocacionService;
 import venp.web.forms.CentroVotacionListaForm;
 
 public class CentroVotacionListaAction extends DispatchAction {
+	
+	CentroVotacionService service;
+	
+	public CentroVotacionService getService() {
+		return service;
+	}
+
+	public void setService(CentroVotacionService service) {
+		this.service = service;
+	}
 
 	public ActionForward borrar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -43,13 +54,11 @@ public class CentroVotacionListaAction extends DispatchAction {
 	}
 
 	private void borrar(int codigo) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 		ArrayList lista = null;
 
 		lista = service.findAll();

@@ -17,6 +17,46 @@ import venp.services.UsuarioService;
 import venp.web.forms.UsuarioAsignarForm;
 
 public class UsuarioAsignarAction extends DispatchAction {
+	
+	ProcesoElectoralService procesoService;
+	
+	PaisService paisService;
+	
+	UsuarioService usuarioService;
+	
+	CentroVotacionService centroService;
+
+	public ProcesoElectoralService getProcesoService() {
+		return procesoService;
+	}
+
+	public void setProcesoService(ProcesoElectoralService procesoService) {
+		this.procesoService = procesoService;
+	}
+
+	public PaisService getPaisService() {
+		return paisService;
+	}
+
+	public void setPaisService(PaisService paisService) {
+		this.paisService = paisService;
+	}
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
+
+	public CentroVotacionService getCentroService() {
+		return centroService;
+	}
+
+	public void setCentroService(CentroVotacionService centroService) {
+		this.centroService = centroService;
+	}
 
 	public ActionForward nuevo(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -151,45 +191,38 @@ public class UsuarioAsignarAction extends DispatchAction {
 	}
 	
 	private ArrayList findAllPE() throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
 		
-		return service.findAllCreado();
+		return procesoService.findAllCreado();
 	}
 
 	private ArrayList findAllPais(int procesoElectoral) throws Exception {
-		PaisService service = new PaisService();
 		
-		return service.findAllLocacion(procesoElectoral);
+		return paisService.findAllLocacion(procesoElectoral);
 	}
 
 	private ArrayList findAllUsuario() throws Exception {
-		UsuarioService service = new UsuarioService();
 		
-		return service.findAllByLocacion();
+		return usuarioService.findAllByLocacion();
 	}
 	
 	private ArrayList findAllCVConLocacion(int procesoElectoral, int codigoUser, int codigoPais) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 		
-		return service.findAll_conUsuario(procesoElectoral, codigoUser, codigoPais);
+		return centroService.findAll_conUsuario(procesoElectoral, codigoUser, codigoPais);
 	}
 
 	private ArrayList findAllCVSinLocacion(int procesoElectoral, int codigoUser, int codigoPais) throws Exception {
-		CentroVotacionService service = new CentroVotacionService();
 		
-		return service.findAll_sinUsuario(procesoElectoral, codigoUser, codigoPais);
+		return centroService.findAll_sinUsuario(procesoElectoral, codigoUser, codigoPais);
 	}
 	
 	private void asignar(int procesoElectoral, int codigoUsuario, int centroVotacion) throws Exception {
-		UsuarioService service = new UsuarioService();
 		
-		service.asignar(procesoElectoral, codigoUsuario, centroVotacion);
+		usuarioService.asignar(procesoElectoral, codigoUsuario, centroVotacion);
 	}
 	
 	private void retirar(int procesoElectoral, int codigoUsuario, int centroVotacion) throws Exception {
-		UsuarioService service = new UsuarioService();
 		
-		service.retirar(procesoElectoral, codigoUsuario, centroVotacion);
+		usuarioService.retirar(procesoElectoral, codigoUsuario, centroVotacion);
 	}
 
 }

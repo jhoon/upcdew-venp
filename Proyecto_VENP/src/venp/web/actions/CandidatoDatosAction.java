@@ -20,6 +20,16 @@ import venp.services.CandidatoService;
 import venp.web.forms.CandidatoDatosForm;
 
 public class CandidatoDatosAction extends DispatchAction {
+	
+	CandidatoService service;
+	
+	public CandidatoService getService() {
+		return service;
+	}
+
+	public void setService(CandidatoService service) {
+		this.service = service;
+	}
 
 	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
@@ -133,17 +143,14 @@ public class CandidatoDatosAction extends DispatchAction {
 	}
 
 	private CandidatoBean findByPrimaryKey(String codigo) throws Exception {
-		CandidatoService service = new CandidatoService();
 		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
 	private String insertar(CandidatoBean bean) throws Exception {
-		CandidatoService service = new CandidatoService();
 		return service.insertar(bean);
 	}
 
 	private String editar(CandidatoBean bean) throws Exception {
-		CandidatoService service = new CandidatoService();
 		return service.editar(bean);
 	}
 

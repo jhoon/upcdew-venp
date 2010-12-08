@@ -21,6 +21,36 @@ import venp.web.forms.ConsolidacionForm;
 
 public class ConsolidacionAction extends DispatchAction {
 
+	LocacionService servLocacion;
+	
+	ProcesoElectoralService servProc;
+	
+	ConsolidacionService services;
+	
+	public ConsolidacionService getServices() {
+		return services;
+	}
+
+	public void setServices(ConsolidacionService service) {
+		this.services = service;
+	}
+	
+	public ProcesoElectoralService getServProc() {
+		return servProc;
+	}
+
+	public void setServProc(ProcesoElectoralService service) {
+		this.servProc = service;
+	}
+
+	public LocacionService getServLocacion() {
+		return servLocacion;
+	}
+
+	public void setServLocacion(LocacionService servLocacion) {
+		this.servLocacion = servLocacion;
+	}
+
 	public ActionForward listarConsolidacion(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -29,7 +59,6 @@ public class ConsolidacionAction extends DispatchAction {
 		ConsolidacionForm frm = (ConsolidacionForm) form;
 		ArrayList resultado = null;
 
-		LocacionService servLocacion = new LocacionService();
 		boolean boolLocacionesAbiertas = servLocacion.locacionesAbiertas();
 
 		/*
@@ -42,7 +71,6 @@ public class ConsolidacionAction extends DispatchAction {
 					"listaConsolidacion.error.locacionesAbiertas"));
 			saveErrors(request, errors);
 		} else {
-			ProcesoElectoralService servProc = new ProcesoElectoralService();
 			/*
 			 * Si el resultado es "F finalizo el procesoElectoral" esta cerrado
 			 * entonces = true.
@@ -57,7 +85,6 @@ public class ConsolidacionAction extends DispatchAction {
 				bolProcCerrado = true; // solo cierra el proceso una sola vez
 			}
 
-			ConsolidacionService services = new ConsolidacionService();
 			ArrayList lista = new ArrayList();
 			lista = services.listarResultados();
 

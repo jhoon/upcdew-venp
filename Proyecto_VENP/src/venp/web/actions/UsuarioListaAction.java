@@ -13,6 +13,16 @@ import venp.services.UsuarioService;
 import venp.web.forms.UsuarioListaForm;
 
 public class UsuarioListaAction extends DispatchAction {
+	
+	UsuarioService service;
+
+	public UsuarioService getService() {
+		return service;
+	}
+
+	public void setService(UsuarioService service) {
+		this.service = service;
+	}
 
 	public ActionForward borrar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -42,13 +52,11 @@ public class UsuarioListaAction extends DispatchAction {
 	}
 
 	private void borrar(String codigo) throws Exception {
-		UsuarioService service = new UsuarioService();
 
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		UsuarioService service = new UsuarioService();
 		ArrayList lista = null;
 
 		lista = service.findAll();
