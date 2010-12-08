@@ -15,6 +15,17 @@ import venp.web.forms.PaisListaForm;
 
 public class PaisListaAction extends DispatchAction {
 
+	
+	private PaisService service;
+	
+	public PaisService getService() {
+		return service;
+	}
+
+	public void setService(PaisService service) {
+		this.service = service;
+	}	
+	
 	public ActionForward borrar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {

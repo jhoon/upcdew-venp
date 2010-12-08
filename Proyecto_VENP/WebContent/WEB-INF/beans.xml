@@ -18,6 +18,61 @@
   <bean id="procesoElectoralService" class="venp.services.ProcesoElectoralService" />
   <bean id="usuarioService" class="venp.services.UsuarioService" />
   <bean id="zonaHorariaService" class="venp.services.ZonaHorariaService" />
+  
+  
+ <bean name="procesoElectoralListaForm" class="venp.web.actions.ProcesoElectoralListaAction">
+     <property name="service">
+      <ref local="procesoElectoralService"/>
+    </property>
+ </bean> 
+ 
+  <bean name="procesoElectoralDatosForm" class="venp.web.actions.ProcesoElectoralDatosAction">
+     <property name="service">
+      <ref local="procesoElectoralService"/>
+    </property>
+ </bean> 
+ 
+  <bean name="perfilListaForm" class="venp.web.actions.PerfilListaAction">
+     <property name="service">
+      <ref local="perfilService"/>
+    </property>
+ </bean> 
+ 
+  <bean name="perfilDatosForm" class="venp.web.actions.PerfilDatosAction">
+     <property name="service">
+      <ref local="perfilService"/>
+    </property>
+ </bean>    
+  
+ <bean name="partidoPoliticoListaForm" class="venp.web.actions.PartidoPoliticoListaAction">
+     <property name="service">
+      <ref local="partidoPoliticoService"/>
+    </property>
+ </bean>    
+ 
+  <bean name="partidoPoliticoDatosForm" class="venp.web.actions.PartidoPoliticoDatosAction">
+     <property name="service">
+      <ref local="partidoPoliticoService"/>
+    </property>
+ </bean>    
+  
+ <bean name="/partidoPoliticoAsignarForm" class="venp.web.actions.PartidoPoliticoAsignarAction">
+     <property name="service">
+      <ref local="partidoPoliticoService"/>
+    </property>
+ </bean>    
+  
+ <bean name="/PaisListaForm" class="venp.web.actions.PaisListaAction">
+     <property name="service">
+      <ref local="paisService"/>
+    </property>
+ </bean>  
+  
+ <bean name="/paisDatosForm" class="venp.web.actions.PaisListaAction">
+     <property name="service">
+      <ref local="paisService"/>
+    </property>
+ </bean>  
     
   <bean name="/locacionCerrarVotacion" class="venp.web.actions.LocacionCerrarVotacionAction" >
   	<property name="service">

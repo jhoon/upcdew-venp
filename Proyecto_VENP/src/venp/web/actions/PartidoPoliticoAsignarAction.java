@@ -18,6 +18,17 @@ import venp.web.forms.PartidoPoliticoAsignarForm;
 
 public class PartidoPoliticoAsignarAction extends DispatchAction {
 	
+	private PartidoPoliticoService service;
+	
+	public PartidoPoliticoService getService() {
+		return service;
+	}
+
+	public void setService(PartidoPoliticoService service) {
+		this.service = service;
+	}
+	
+	
 	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)

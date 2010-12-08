@@ -16,6 +16,16 @@ import venp.web.forms.PerfilDatosForm;
 
 public class PerfilDatosAction extends DispatchAction {
 
+	private PerfilService service;
+	
+	public PerfilService getService() {
+		return service;
+	}
+
+	public void setService(PerfilService service) {
+		this.service = service;
+	}	
+	
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
