@@ -54,18 +54,11 @@ public class PaisListaAction extends DispatchAction {
 	}
 
 	private void borrar(int codigo) throws Exception {
-		PaisService service = new PaisService();
-
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		PaisService service = new PaisService();
-		ArrayList lista = null;
-
-		lista = service.findAll();
-
-		return lista;
+		return service.findAll();
 	}
 
 }
