@@ -153,7 +153,6 @@ public class ProcesoElectoralDatosAction extends DispatchAction {
 	public ActionForward nuevo(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-
 		ProcesoElectoralDatosForm frm = (ProcesoElectoralDatosForm) form;
 
 		frm.setNuevo(true);
@@ -162,23 +161,15 @@ public class ProcesoElectoralDatosAction extends DispatchAction {
 	}
 
 	private void editar(ProcesoElectoralBean bean) throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
 		service.editar(bean);
 	}
 
 	private ProcesoElectoralBean findByPrimaryKey(String codigo)
 			throws Exception {
-
-		ProcesoElectoralService service = new ProcesoElectoralService();
-		ProcesoElectoralBean bean = service.findByPrimaryKey(Integer
-				.parseInt(codigo));
-
-		return bean;
+		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
 	private void insertar(ProcesoElectoralBean bean) throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
-
 		service.insertar(bean);
 	}
 

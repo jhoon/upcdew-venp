@@ -75,10 +75,10 @@
 	</global-forwards>
 
 	<action-mappings>
-		<action path="/language" type="venp.web.actions.LanguageAction" />
+		<action path="/language" type="org.springframework.web.struts.DelegatingActionProxy" />
 
 		<action path="/login" name="loginForm" input="/seguridad/login.jsp"
-			parameter="cmd" type="venp.web.actions.LoginAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="/seguridad/login.jsp" />
 			<forward name="locacion" path="/adm_locacion/locacion.jsp"
 				redirect="true" />
@@ -95,14 +95,14 @@
 		<!-- Menu 2 -->
 
 		<action path="/cedula" name="cedulaForm" input="/cedulaDatos.jsp"
-			parameter="cmd" type="venp.web.actions.CedulaAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="lista" path="cedulaLista" redirect="true" />
 			<forward name="datos" path="cedulaDatos" redirect="true" />
 			<forward name="preview" path="cedulaPreview" redirect="true" />
 		</action>
 
 		<action path="/candidatoLista" name="candidatoListaForm" input="/candidatoLista.jsp"
-			parameter="cmd" type="venp.web.actions.CandidatoListaAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="candidatoLista" />
 		</action>
 
@@ -114,7 +114,7 @@
 
 		<action path="/partidoPoliticoLista" name="partidoPoliticoListaForm"
 			input="/partidoPoliticoLista.jsp" parameter="cmd"
-			type="venp.web.actions.PartidoPoliticoListaAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="ppLista" />
 		</action>
 
@@ -135,7 +135,7 @@
 
 		<action path="/listaEscrutinio" name="listaEscrutinioForm"
 			input="/listaEscrutinio.jsp" parameter="cmd"
-			type="venp.web.actions.EscrutinioAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="listarLocacion" path="listarEscrutinio" />
 			<forward name="detalleLocacion" path="/listaEscrutinio.do?cmd=listarEscrutinio"></forward>
 		</action>
@@ -169,7 +169,7 @@
 		</action>
 
 		<action path="/votacion" name="cedulaForm" input="/votacion/votacionCedula.jsp"
-			parameter="cmd" type="venp.web.actions.VotacionAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<exception key="elector.error.otro" path="/errores.jsp" type="java.lang.Exception" ></exception>
 			<forward name="inicio" path="/elector.do" />
 			<forward name="fin" path="voConfirma" />
@@ -185,7 +185,7 @@
 		</action>
 
 		<action path="/empadronamiento" name="electorForm" input="/emp_form.jsp"
-			parameter="cmd" type="venp.web.actions.EmpadronamientoAction" scope="session">
+			parameter="cmd" type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="empadronamiento.form" />
 			<forward name="fin" path="empadronamiento.msg" />
 			<forward name="menu" path="empadronamiento.menu" />
@@ -227,7 +227,7 @@
 
 		<action path="/usuarioDatos" name="usuarioDatosForm"
 			input="/adm_central/usuarioDatos.jsp" parameter="cmd"
-			type="venp.web.actions.UsuarioDatosAction" scope="session">
+			type="org.springframework.web.struts.DelegatingActionProxy" scope="session">
 			<forward name="inicio" path="usuarioDatos" />
 			<forward name="listado" path="/usuarioLista.do?cmd=listar" />
 		</action>

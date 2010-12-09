@@ -15,15 +15,21 @@ import venp.services.ElectorService;
 import venp.web.forms.ElectorForm;
 
 public class EmpadronamientoAction extends DispatchAction {
+	private ElectorService service;
+	
+	public void setService(ElectorService service) {
+		this.service = service;
+	}
 
-	@Override
+	public ElectorService getService() {
+		return service;
+	}
+	
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ElectorForm frm = (ElectorForm) form;
 		frm.reset();
-		// Instancia del servicio
-		ElectorService service = new ElectorService();
 		// validacion de proceso electoral activo
 		int intProcesoId = service.getEmpadronamientoActivo();
 		// Si esta en el rango, puede empadronarse
@@ -55,8 +61,6 @@ public class EmpadronamientoAction extends DispatchAction {
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		ElectorForm frm = (ElectorForm) form;
-		// Intancia del servicio
-		ElectorService service = new ElectorService();
 		// se validan los datos del empadronado (no duplucidad del DNI)
 		ElectorForm bean = service.validarDNI(frm.getDni());
 		if (bean == null) {
@@ -78,5 +82,4 @@ public class EmpadronamientoAction extends DispatchAction {
 			throws Exception {
 		return mapping.findForward("inicio");
 	}
-
 }
