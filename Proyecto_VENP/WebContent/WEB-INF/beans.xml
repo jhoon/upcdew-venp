@@ -2,198 +2,232 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-<!--  <bean id="bookService" class="ca.nexcel.books.business.BookServiceImpl"/>-->
+	<!--
+		<bean id="bookService"
+		class="ca.nexcel.books.business.BookServiceImpl"/>
+	-->
 
-  <bean id="candidatoService" class="venp.services.CandidatoService" />
-  <bean id="cedulaService" class="venp.services.CedulaService" />
-  <bean id="centroVotacionService" class="venp.services.CentroVotacionService" />
-  <bean id="consolidacionService" class="venp.services.ConsolidacionService" />
-  <bean id="electorService" class="venp.services.ElectorService" />
-  <bean id="escrutinioService" class="venp.services.EscrutinioService" />
-  <bean id="locacionService" class="venp.services.LocacionService" />
-  <bean id="logService" class="venp.services.LogService" />
-  <bean id="paisService" class="venp.services.PaisService" />
-  <bean id="partidoPoliticoService" class="venp.services.PartidoPoliticoService" />
-  <bean id="perfilService" class="venp.services.PerfilService" />
-  <bean id="procesoElectoralService" class="venp.services.ProcesoElectoralService" />
-  <bean id="usuarioService" class="venp.services.UsuarioService" />
-  <bean id="zonaHorariaService" class="venp.services.ZonaHorariaService" />
-  
-  
- <bean name="procesoElectoralListaForm" class="venp.web.actions.ProcesoElectoralListaAction">
-     <property name="service">
-      <ref local="procesoElectoralService"/>
-    </property>
- </bean> 
- 
-  <bean name="procesoElectoralDatosForm" class="venp.web.actions.ProcesoElectoralDatosAction">
-     <property name="service">
-      <ref local="procesoElectoralService"/>
-    </property>
- </bean> 
- 
-  <bean name="perfilListaForm" class="venp.web.actions.PerfilListaAction">
-     <property name="service">
-      <ref local="perfilService"/>
-    </property>
- </bean> 
- 
-  <bean name="perfilDatosForm" class="venp.web.actions.PerfilDatosAction">
-     <property name="service">
-      <ref local="perfilService"/>
-    </property>
- </bean>    
-  
- <bean name="partidoPoliticoListaForm" class="venp.web.actions.PartidoPoliticoListaAction">
-     <property name="service">
-      <ref local="partidoPoliticoService"/>
-    </property>
- </bean>    
- 
-  <bean name="partidoPoliticoDatosForm" class="venp.web.actions.PartidoPoliticoDatosAction">
-     <property name="service">
-      <ref local="partidoPoliticoService"/>
-    </property>
- </bean>    
-  
- <bean name="/partidoPoliticoAsignarForm" class="venp.web.actions.PartidoPoliticoAsignarAction">
-     <property name="service">
-      <ref local="partidoPoliticoService"/>
-    </property>
- </bean>    
-  
- <bean name="/PaisListaForm" class="venp.web.actions.PaisListaAction">
-     <property name="service">
-      <ref local="paisService"/>
-    </property>
- </bean>  
-  
- <bean name="/paisDatosForm" class="venp.web.actions.PaisListaAction">
-     <property name="service">
-      <ref local="paisService"/>
-    </property>
- </bean>  
-    
-  <bean name="/locacionCerrarVotacion" class="venp.web.actions.LocacionCerrarVotacionAction" >
-  	<property name="service">
-	  <ref local="locacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/locacionPuestaCero" class="venp.web.actions.LocacionPuestaCeroAction" >
-  	<property name="service">
-	  <ref local="locacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/candidatoDatos" class="venp.web.actions.CandidatoDatosAction" >
-  	<property name="service">
-	  <ref local="candidatoService"/>
-	</property>
-  </bean>
-  
-  <bean name="/candidatoLista" class="venp.web.actions.CandidatoListaAction" >
-  	<property name="service">
-	  <ref local="candidatoService"/>
-	</property>
-  </bean>
-  
-  <bean name="/centrovotacionAsignar" class="venp.web.actions.CentroVotacionAsignarAction" >
-  	<property name="peService">
-	  <ref local="procesoElectoralService"/>
-	</property>
-	<property name="paService">
-	  <ref local="paisService"/>
-	</property>
-	<property name="cvService">
-	  <ref local="centroVotacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/centrovotacionDatos" class="venp.web.actions.CentroVotacionDatosAction" >
-  	<property name="cvService">
-	  <ref local="centroVotacionService"/>
-	</property>
-	<property name="paService">
-	  <ref local="paisService"/>
-	</property>
-	<property name="zhService">
-	  <ref local="zonaHorariaService"/>
-	</property>
-  </bean>
-  
-  <bean name="/centrovotacionLista" class="venp.web.actions.CentroVotacionListaAction" >
-  	<property name="service">
-	  <ref local="centroVotacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/listaConsolidacion" class="venp.web.actions.ConsolidacionAction" >
-  	<property name="servLocacion">
-	  <ref local="locacionService"/>
-	</property>
-	<property name="servProc">
-	  <ref local="procesoElectoralService"/>
-	</property>
-	<property name="services">
-	  <ref local="consolidacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/consulado" class="venp.web.actions.ConsuladoAction" >
-  	<property name="service">
-	  <ref local="electorService"/>
-	</property>
-  </bean>
-  
-  <bean name="/elector" class="venp.web.actions.ElectorAction" >
-  	<property name="procesoService">
-	  <ref local="procesoElectoralService"/>
-	</property>
-	<property name="electorService">
-	  <ref local="electorService"/>
-	</property>
-  </bean>
-  
-  <bean name="/usuarioLista" class="venp.web.actions.UsuarioListaAction" >
-  	<property name="service">
-	  <ref local="usuarioService"/>
-	</property>
-  </bean>
-  
-  <bean name="/usuarioAsignar" class="venp.web.actions.UsuarioAsignarAction" >
-  	<property name="procesoService">
-	  <ref local="procesoElectoralService"/>
-	</property>
-	<property name="paisService">
-	  <ref local="paisService"/>
-	</property>
-	<property name="usuarioService">
-	  <ref local="usuarioService"/>
-	</property>
-	<property name="centroService">
-	  <ref local="centroVotacionService"/>
-	</property>
-  </bean>
-  
-  <bean name="/procesoElectoralLista" class="venp.web.actions.ProcesoElectoralListaAction" >
-  	<property name="service">
-	  <ref local="procesoElectoralService"/>
-	</property>
-  </bean>
-  
-  <bean name="/perfilLista" class="venp.web.actions.PerfilListaAction" >
-  	<property name="service">
-	  <ref local="perfilService"/>
-	</property>
-  </bean>
-  
-  <bean name="/locacionMonitoreo" class="venp.web.actions.LocacionMonitoreoAction" >
-  	<property name="service">
-	  <ref local="locacionService"/>
-	</property>
-  </bean>
-  
-  <!-- interceptors cannot reach Struts action because its not under Spring's control -->
+	<bean id="candidatoService" class="venp.services.CandidatoService" />
+	<bean id="cedulaService" class="venp.services.CedulaService" />
+	<bean id="centroVotacionService" class="venp.services.CentroVotacionService" />
+	<bean id="consolidacionService" class="venp.services.ConsolidacionService" />
+	<bean id="electorService" class="venp.services.ElectorService" />
+	<bean id="escrutinioService" class="venp.services.EscrutinioService" />
+	<bean id="locacionService" class="venp.services.LocacionService" />
+	<bean id="logService" class="venp.services.LogService" />
+	<bean id="paisService" class="venp.services.PaisService" />
+	<bean id="partidoPoliticoService" class="venp.services.PartidoPoliticoService" />
+	<bean id="perfilService" class="venp.services.PerfilService" />
+	<bean id="procesoElectoralService" class="venp.services.ProcesoElectoralService" />
+	<bean id="usuarioService" class="venp.services.UsuarioService" />
+	<bean id="zonaHorariaService" class="venp.services.ZonaHorariaService" />
 
+	<bean name="/language" class="venp.web.actions.LanguageAction" />
+
+	<bean name="/login" class="venp.web.actions.LoginAction">
+		<property name="service">
+			<ref local="usuarioService" />
+		</property>
+	</bean>
+
+	<bean name="/cedula" class="venp.web.actions.CedulaAction">
+		<property name="service">
+			<ref local="cedulaService" />
+		</property>
+	</bean>
+
+	<bean name="/empadronamiento" class="venp.web.actions.EmpadronamientoAction">
+		<property name="service">
+			<ref local="electorService" />
+		</property>
+	</bean>
+
+	<bean name="/procesoElectoralLista" class="venp.web.actions.ProcesoElectoralListaAction">
+		<property name="service">
+			<ref local="procesoElectoralService" />
+		</property>
+	</bean>
+
+	<bean name="/procesoElectoralDatos" class="venp.web.actions.ProcesoElectoralDatosAction">
+		<property name="service">
+			<ref local="procesoElectoralService" />
+		</property>
+	</bean>
+	
+	<bean name="/perfilLista" class="venp.web.actions.PerfilListaAction">
+		<property name="service">
+			<ref local="perfilService" />
+		</property>
+	</bean>
+
+	<bean name="/perfilDatos" class="venp.web.actions.PerfilDatosAction">
+		<property name="service">
+			<ref local="perfilService" />
+		</property>
+	</bean>
+
+	<bean name="/partidoPoliticoLista" class="venp.web.actions.PartidoPoliticoListaAction">
+		<property name="service">
+			<ref local="partidoPoliticoService" />
+		</property>
+	</bean>
+
+	<bean name="/partidoPoliticoDatos" class="venp.web.actions.PartidoPoliticoDatosAction">
+		<property name="service">
+			<ref local="partidoPoliticoService" />
+		</property>
+	</bean>
+
+	<bean name="/partidoPoliticoAsignar" class="venp.web.actions.PartidoPoliticoAsignarAction">
+		<property name="service">
+			<ref local="partidoPoliticoService" />
+		</property>
+		<property name="candidatoService">
+			<ref local="candidatoService" />
+		</property>
+	</bean>
+
+	<bean name="/paisLista" class="venp.web.actions.PaisListaAction">
+		<property name="service">
+			<ref local="paisService" />
+		</property>
+	</bean>
+
+	<bean name="/paisDatos" class="venp.web.actions.PaisListaAction">
+		<property name="service">
+			<ref local="paisService" />
+		</property>
+	</bean>
+
+	<bean name="/locacionCerrarVotacion" class="venp.web.actions.LocacionCerrarVotacionAction">
+		<property name="service">
+			<ref local="locacionService" />
+		</property>
+	</bean>
+
+	<bean name="/locacionPuestaCero" class="venp.web.actions.LocacionPuestaCeroAction">
+		<property name="service">
+			<ref local="locacionService" />
+		</property>
+	</bean>
+
+	<bean name="/candidatoDatos" class="venp.web.actions.CandidatoDatosAction">
+		<property name="service">
+			<ref local="candidatoService" />
+		</property>
+	</bean>
+
+	<bean name="/candidatoLista" class="venp.web.actions.CandidatoListaAction">
+		<property name="service">
+			<ref local="candidatoService" />
+		</property>
+	</bean>
+
+	<bean name="/centrovotacionAsignar" class="venp.web.actions.CentroVotacionAsignarAction">
+		<property name="peService">
+			<ref local="procesoElectoralService" />
+		</property>
+		<property name="paService">
+			<ref local="paisService" />
+		</property>
+		<property name="cvService">
+			<ref local="centroVotacionService" />
+		</property>
+	</bean>
+
+	<bean name="/centrovotacionDatos" class="venp.web.actions.CentroVotacionDatosAction">
+		<property name="cvService">
+			<ref local="centroVotacionService" />
+		</property>
+		<property name="paService">
+			<ref local="paisService" />
+		</property>
+		<property name="zhService">
+			<ref local="zonaHorariaService" />
+		</property>
+	</bean>
+
+	<bean name="/centrovotacionLista" class="venp.web.actions.CentroVotacionListaAction">
+		<property name="service">
+			<ref local="centroVotacionService" />
+		</property>
+	</bean>
+
+	<bean name="/listaConsolidacion" class="venp.web.actions.ConsolidacionAction">
+		<property name="servLocacion">
+			<ref local="locacionService" />
+		</property>
+		<property name="servProc">
+			<ref local="procesoElectoralService" />
+		</property>
+		<property name="services">
+			<ref local="consolidacionService" />
+		</property>
+	</bean>
+
+	<bean name="/consulado" class="venp.web.actions.ConsuladoAction">
+		<property name="service">
+			<ref local="electorService" />
+		</property>
+	</bean>
+
+	<bean name="/elector" class="venp.web.actions.ElectorAction">
+		<property name="procesoService">
+			<ref local="procesoElectoralService" />
+		</property>
+		<property name="electorService">
+			<ref local="electorService" />
+		</property>
+	</bean>
+
+	<bean name="/usuarioLista" class="venp.web.actions.UsuarioListaAction">
+		<property name="service">
+			<ref local="usuarioService" />
+		</property>
+	</bean>
+
+	<bean name="/usuarioAsignar" class="venp.web.actions.UsuarioAsignarAction">
+		<property name="procesoService">
+			<ref local="procesoElectoralService" />
+		</property>
+		<property name="paisService">
+			<ref local="paisService" />
+		</property>
+		<property name="usuarioService">
+			<ref local="usuarioService" />
+		</property>
+		<property name="centroService">
+			<ref local="centroVotacionService" />
+		</property>
+	</bean>
+
+	<bean name="/locacionMonitoreo" class="venp.web.actions.LocacionMonitoreoAction">
+		<property name="service">
+			<ref local="locacionService" />
+		</property>
+	</bean>
+
+	<bean name="/usuarioDatos" class="venp.web.actions.UsuarioDatosAction">
+		<property name="usuarioService">
+			<ref local="usuarioService" />
+		</property>
+		<property name="perfilService">
+			<ref local="perfilService" />
+		</property>
+	</bean>
+
+	<bean name="/votacion" class="venp.web.actions.VotacionAction">
+		<property name="service">
+			<ref local="electorService" />
+		</property>
+	</bean>
+
+	<bean name="/listaEscrutinio" class="venp.web.actions.EscrutinioAction">
+		<property name="escrutinioService">
+			<ref local="escrutinioService" />
+		</property>
+		<property name="locacionService">
+			<ref local="locacionService" />
+		</property>
+	</bean>
 </beans>

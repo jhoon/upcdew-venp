@@ -122,32 +122,19 @@ public class ProcesoElectoralListaAction extends DispatchAction {
 	}
 
 	private ArrayList listarTodos() throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
-
-		ArrayList lista = null;
-
-		lista = service.buscarTodos();
-
-		return lista;
+		return service.buscarTodos();
 	}
 
 	private void activarId(String codigo) throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
-
 		service.activarProcesoElectoral(Integer.parseInt(codigo));
 
 	}
 
 	private void anularId(String codigo) throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
-
 		service.anularProcesoElectoral(Integer.parseInt(codigo));
-
 	}
 
 	private ProcesoElectoralBean buscarId(String codigo) throws Exception {
-		ProcesoElectoralService service = new ProcesoElectoralService();
-
 		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 

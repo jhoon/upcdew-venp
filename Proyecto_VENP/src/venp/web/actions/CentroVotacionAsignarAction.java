@@ -5,14 +5,12 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.bcel.verifier.statics.Pass1Verifier;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
 import venp.services.CentroVotacionService;
-import venp.services.LocacionService;
 import venp.services.PaisService;
 import venp.services.ProcesoElectoralService;
 import venp.web.forms.CentroVotacionAsignarForm;
@@ -144,32 +142,26 @@ public class CentroVotacionAsignarAction extends DispatchAction {
 	}
 
 	private ArrayList findAllPE() throws Exception {
-		
 		return peService.findAllCreado();
 	}
 
 	private ArrayList findAllPais() throws Exception {
-		
 		return paService.findAll();
 	}
 
 	private ArrayList findAllCVConLocacion(int procesoElectoral, int codigoPais) throws Exception {
-		
 		return cvService.findAllConLocacion(procesoElectoral, codigoPais);
 	}
 
 	private ArrayList findAllCVSinLocacion(int procesoElectoral, int codigoPais) throws Exception {
-		
 		return cvService.findAllSinLocacion(procesoElectoral, codigoPais);
 	}
 	
 	private void asignar(int procesoElectoral, int centroVotacion) throws Exception {
-		
 		cvService.asignar(procesoElectoral, centroVotacion);
 	}
 	
 	private void retirar(int procesoElectoral, int centroVotacion) throws Exception {
-		
 		cvService.retirar(procesoElectoral, centroVotacion);
 	}
 

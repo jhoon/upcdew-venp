@@ -19,6 +19,25 @@ import venp.web.forms.EscrutinioForm;
 
 public class EscrutinioAction extends DispatchAction {
 
+	private EscrutinioService escrutinioService;
+	private LocacionService locacionService;
+	
+	public void setEscrutinioService(EscrutinioService escrutinioService) {
+		this.escrutinioService = escrutinioService;
+	}
+
+	public EscrutinioService getEscrutinioService() {
+		return escrutinioService;
+	}
+
+	public void setLocacionService(LocacionService locacionService) {
+		this.locacionService = locacionService;
+	}
+
+	public LocacionService getLocacionService() {
+		return locacionService;
+	}
+
 	public ActionForward listarEscrutinio(ActionMapping mapping,
 			ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -27,11 +46,9 @@ public class EscrutinioAction extends DispatchAction {
 		EscrutinioForm frm = (EscrutinioForm) form;
 		ArrayList resultado = null;
 
-		EscrutinioService servEscrutinio = new EscrutinioService();
-		LocacionService service = new LocacionService();
 		ArrayList lista = new ArrayList();
 
-		lista = service.listarLocacionesCerradas();
+		lista = locacionService.listarLocacionesCerradas();
 
 		LocacionBean bean = null;
 		DetalleEscrutinioBean beana = null;
@@ -45,7 +62,7 @@ public class EscrutinioAction extends DispatchAction {
 
 					ArrayList listaDetalle = new ArrayList();
 
-					listaDetalle = servEscrutinio
+					listaDetalle = escrutinioService
 							.listarDetalleEscrutinio(String.valueOf(bean
 									.getCodigo()));
 
@@ -67,10 +84,9 @@ public class EscrutinioAction extends DispatchAction {
 
 		String id = request.getParameter("keyValue");
 
-		EscrutinioService service = new EscrutinioService();
 		ArrayList listaDetalle = new ArrayList();
 
-		listaDetalle = service.listarDetalleLocacion(id);
+		listaDetalle = escrutinioService.listarDetalleLocacion(id);
 
 		ArrayList ls = frm.getListaEscrutinio();
 

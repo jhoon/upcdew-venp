@@ -16,6 +16,16 @@ import venp.services.CedulaService;
 
 public class CedulaAction extends DispatchAction {
 
+	private CedulaService service;
+	
+	public CedulaService getService() {
+		return service;
+	}
+
+	public void setService(CedulaService service) {
+		this.service = service;
+	}
+
 	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -26,7 +36,6 @@ public class CedulaAction extends DispatchAction {
 	public ActionForward listar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		CedulaService service = new CedulaService();
 		ArrayList cedulas = service.listarCedulas();
 		request.setAttribute("listaCedulas", cedulas);
 		return mapping.findForward("lista");
@@ -35,7 +44,6 @@ public class CedulaAction extends DispatchAction {
 	public ActionForward editar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		CedulaService service = new CedulaService();
 		ArrayList procesos = service.cargarProcesosElectorales();
 		request.setAttribute("listaProcesosElectorales", procesos);
 		
@@ -62,7 +70,6 @@ public class CedulaAction extends DispatchAction {
 	public ActionForward crear(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		CedulaService service = new CedulaService();
 		ArrayList procesos = service.cargarProcesosElectorales();
 		request.setAttribute("listaProcesosElectorales", procesos);
 		
@@ -93,7 +100,7 @@ public class CedulaAction extends DispatchAction {
 		for(int i=1;i<params.length;i++) {
 			strRes += ", " + params[i];
 		}
-		pw.print("Hola renzo, este es el nuevo orden: " + strRes);
+		pw.print("Hola, este es el nuevo orden: " + strRes);
 		return null;
 	}
 

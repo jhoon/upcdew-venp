@@ -18,8 +18,17 @@ import venp.web.forms.PartidoPoliticoAsignarForm;
 
 public class PartidoPoliticoAsignarAction extends DispatchAction {
 	
+	private CandidatoService candidatoService;
 	private PartidoPoliticoService service;
 	
+	public void setCandidatoService(CandidatoService candidatoService) {
+		this.candidatoService = candidatoService;
+	}
+
+	public CandidatoService getCandidatoService() {
+		return candidatoService;
+	}
+
 	public PartidoPoliticoService getService() {
 		return service;
 	}
@@ -27,8 +36,7 @@ public class PartidoPoliticoAsignarAction extends DispatchAction {
 	public void setService(PartidoPoliticoService service) {
 		this.service = service;
 	}
-	
-	
+		
 	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -119,38 +127,31 @@ public class PartidoPoliticoAsignarAction extends DispatchAction {
 	}
 	
 	private PartidoPoliticoBean findByPrimaryKey(String codigo) throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
 	private ArrayList findAll_conPP(int partidoPolitico_ID) throws Exception {
-		CandidatoService service = new CandidatoService();
-		return service.listarConPartidoPolitico(partidoPolitico_ID);
+		return candidatoService.listarConPartidoPolitico(partidoPolitico_ID);
 	}
 
 	private ArrayList findAll_sinPP(int partidoPolitico_ID) throws Exception {
-		CandidatoService service = new CandidatoService();
-		return service.listarSinPartidoPolitico(partidoPolitico_ID);
+		return candidatoService.listarSinPartidoPolitico(partidoPolitico_ID);
 	}
 	
 	private void asignar(int partidoPolitico, int candidato) throws Exception {
-		CandidatoService service = new CandidatoService();
-		service.asignar(partidoPolitico, candidato);
+		candidatoService.asignar(partidoPolitico, candidato);
 	}
 	
 	private void retirar(int partidoPolitico, int candidato) throws Exception {
-		CandidatoService service = new CandidatoService();
-		service.retirar(partidoPolitico, candidato);
+		candidatoService.retirar(partidoPolitico, candidato);
 	}
 	
 	private int nroCandidatosAsignados(int partidoPoliticoID) throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();		
 		return service.totalCandidatosAsignados(partidoPoliticoID);
 	}
 	
 	private CandidatoBean findByCandidatoID(int candidatoID) throws Exception {
-		CandidatoService service = new CandidatoService();
-		return service.findByPrimaryKey(candidatoID);
+		return candidatoService.findByPrimaryKey(candidatoID);
 	}
 
 }
