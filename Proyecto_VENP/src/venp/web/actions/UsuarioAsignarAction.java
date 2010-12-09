@@ -19,11 +19,8 @@ import venp.web.forms.UsuarioAsignarForm;
 public class UsuarioAsignarAction extends DispatchAction {
 	
 	ProcesoElectoralService procesoService;
-	
 	PaisService paisService;
-	
 	UsuarioService usuarioService;
-	
 	CentroVotacionService centroService;
 
 	public ProcesoElectoralService getProcesoService() {
@@ -190,38 +187,31 @@ public class UsuarioAsignarAction extends DispatchAction {
 		return mapping.findForward("listado");
 	}
 	
-	private ArrayList findAllPE() throws Exception {
-		
+	private ArrayList findAllPE() throws Exception {	
 		return procesoService.findAllCreado();
 	}
 
 	private ArrayList findAllPais(int procesoElectoral) throws Exception {
-		
 		return paisService.findAllLocacion(procesoElectoral);
 	}
 
-	private ArrayList findAllUsuario() throws Exception {
-		
+	private ArrayList findAllUsuario() throws Exception {	
 		return usuarioService.findAllByLocacion();
 	}
 	
 	private ArrayList findAllCVConLocacion(int procesoElectoral, int codigoUser, int codigoPais) throws Exception {
-		
 		return centroService.findAll_conUsuario(procesoElectoral, codigoUser, codigoPais);
 	}
 
 	private ArrayList findAllCVSinLocacion(int procesoElectoral, int codigoUser, int codigoPais) throws Exception {
-		
 		return centroService.findAll_sinUsuario(procesoElectoral, codigoUser, codigoPais);
 	}
 	
 	private void asignar(int procesoElectoral, int codigoUsuario, int centroVotacion) throws Exception {
-		
 		usuarioService.asignar(procesoElectoral, codigoUsuario, centroVotacion);
 	}
 	
 	private void retirar(int procesoElectoral, int codigoUsuario, int centroVotacion) throws Exception {
-		
 		usuarioService.retirar(procesoElectoral, codigoUsuario, centroVotacion);
 	}
 

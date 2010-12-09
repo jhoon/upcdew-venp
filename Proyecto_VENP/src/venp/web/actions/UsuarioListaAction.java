@@ -52,16 +52,11 @@ public class UsuarioListaAction extends DispatchAction {
 	}
 
 	private void borrar(String codigo) throws Exception {
-
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		ArrayList lista = null;
-
-		lista = service.findAll();
-
-		return lista;
+		return service.findAll();
 	}
 
 }

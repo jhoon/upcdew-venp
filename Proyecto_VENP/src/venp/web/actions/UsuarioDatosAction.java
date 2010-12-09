@@ -20,6 +20,25 @@ import venp.web.forms.UsuarioDatosForm;
 
 public class UsuarioDatosAction extends DispatchAction {
 
+	private UsuarioService usuarioService;
+	private PerfilService perfilService;
+	
+	public void setUsuarioService(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
+
+	public UsuarioService getUsuarioService() {
+		return usuarioService;
+	}
+
+	public void setPerfilService(PerfilService perfilService) {
+		this.perfilService = perfilService;
+	}
+
+	public PerfilService getPerfilService() {
+		return perfilService;
+	}
+
 	public ActionForward cancelar(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
@@ -196,39 +215,27 @@ public class UsuarioDatosAction extends DispatchAction {
 	}
 
 	private void editar(UsuarioBean bean) throws Exception {
-		UsuarioService service = new UsuarioService();
-		service.editar(bean);
+		usuarioService.editar(bean);
 	}
 
 	private UsuarioBean findByPrimaryKey(String codigo) throws Exception {
-		UsuarioService service = new UsuarioService();
-		UsuarioBean bean = service.findByPrimaryKey(codigo);
-
-		return bean;
+		return usuarioService.findByPrimaryKey(codigo);
 	}
 
 	private boolean findByDNI(String dni) throws Exception {
-		UsuarioService service = new UsuarioService();
-		
-		return service.findByDNI(dni);
+		return usuarioService.findByDNI(dni);
 	}
 
 	private boolean findByDNI(String dni, String codigo) throws Exception {
-		UsuarioService service = new UsuarioService();
-		
-		return service.findByDNI(dni, codigo);
+		return usuarioService.findByDNI(dni, codigo);
 	}
 
 	private boolean findByUserName(String userName) throws Exception {
-		UsuarioService service = new UsuarioService();
-		
-		return service.findByUserName(userName);
+		return usuarioService.findByUserName(userName);
 	}
 
 	private boolean findByUserName(String userName, String codigo) throws Exception {
-		UsuarioService service = new UsuarioService();
-		
-		return service.findByUserName(userName, codigo);
+		return usuarioService.findByUserName(userName, codigo);
 	}
 
 	private void insertar(UsuarioBean bean) throws Exception {
@@ -237,9 +244,7 @@ public class UsuarioDatosAction extends DispatchAction {
 	}
 
 	private ArrayList findAllPerfil() throws Exception {
-		PerfilService service = new PerfilService();
-		
-		return service.findAll();
+		return perfilService.findAll();
 	}
 
 }

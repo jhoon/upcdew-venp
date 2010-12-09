@@ -63,18 +63,11 @@ public class PerfilListaAction extends DispatchAction {
 	}
 
 	private void borrar(int codigo) throws Exception {
-		PerfilService service = new PerfilService();
-
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		PerfilService service = new PerfilService();
-		ArrayList lista = null;
-
-		lista = service.findAll();
-
-		return lista;
+		return service.findAll();
 	}
 	
 }
