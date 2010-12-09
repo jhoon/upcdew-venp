@@ -22,6 +22,16 @@ import venp.web.forms.LoginForm;
 
 public class LoginAction extends DispatchAction {
 
+	private UsuarioService service;
+		
+	public UsuarioService getService() {
+		return service;
+	}
+
+	public void setService(UsuarioService service) {
+		this.service = service;
+	}
+
 	@Override
 	protected ActionForward unspecified(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
@@ -43,7 +53,6 @@ public class LoginAction extends DispatchAction {
 		String usuario = frm.getUserName();
 		String password = frm.getPassword();
 
-		UsuarioService service = new UsuarioService();
 		UsuarioBean bean = service.findByUsuario(usuario);
 
 		// no existe el usuario

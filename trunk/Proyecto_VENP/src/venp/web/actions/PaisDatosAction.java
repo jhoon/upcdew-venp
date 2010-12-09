@@ -133,43 +133,30 @@ public class PaisDatosAction extends DispatchAction {
 	}
 
 	private void editar(PaisBean bean) throws Exception {
-		PaisService service = new PaisService();
 		service.editar(bean);
 	}
 
 	private PaisBean findByPrimaryKey(String codigo) throws Exception {
-		PaisService service = new PaisService();
-		PaisBean bean = service.findByPrimaryKey(Integer.parseInt(codigo));
-
-		return bean;
+		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
 	private boolean findByName(String nombre) throws Exception {
-		PaisService service = new PaisService();
-		
 		return service.findByName(nombre);
 	}
 
 	private boolean findByName(String nombre, int codigo) throws Exception {
-		PaisService service = new PaisService();
-		
 		return service.findByName(nombre, codigo);
 	}
 
 	private boolean findByAbreviatura(String abreviatura) throws Exception {
-		PaisService service = new PaisService();
-		
 		return service.findByAbreviatura(abreviatura);
 	}
 
 	private boolean findByAbreviatura(String abreviatura, int codigo) throws Exception {
-		PaisService service = new PaisService();
-		
 		return service.findByAbreviatura(abreviatura, codigo);
 	}
 
 	private void insertar(PaisBean bean) throws Exception {
-		PaisService service = new PaisService();
 		service.insertar(bean);
 	}
 
