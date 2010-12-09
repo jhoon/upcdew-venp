@@ -20,6 +20,16 @@ import venp.web.forms.ElectorForm;
 
 public class VotacionAction extends DispatchAction {
 
+	private ElectorService service;
+
+	public void setService(ElectorService service) {
+		this.service = service;
+	}
+
+	public ElectorService getService() {
+		return service;
+	}
+	
 	/**
 	 * envía todos los request no especificados a votacionBuscarDni.jsp
 	 * mediante su alias
@@ -77,7 +87,6 @@ public class VotacionAction extends DispatchAction {
 		HttpSession session = request.getSession();
 		ElectorForm bean = (ElectorForm)session.getAttribute("Elector");
 		if(bean != null) {
-			ElectorService service = new ElectorService();
 			try {
 				bean = service.votar((String)frm.get("voto"), bean);
 				session.removeAttribute("Elector");
@@ -112,7 +121,6 @@ public class VotacionAction extends DispatchAction {
 	public ActionForward confirm(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		ElectorService service = new ElectorService();
 		ElectorForm bean = service.validarDNI(request.getParameter("elector"));
 		String strMode = request.getParameter("mode");
 		bean.setFechaSufragio(request.getParameter("fecha"));

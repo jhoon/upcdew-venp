@@ -51,12 +51,10 @@ public class PartidoPoliticoListaAction extends DispatchAction {
 	}
 
 	private void borrar(int codigo) throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		service.borrar(codigo);
 	}
 
 	private ArrayList findAll() throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		return service.findAll();
 	}
 

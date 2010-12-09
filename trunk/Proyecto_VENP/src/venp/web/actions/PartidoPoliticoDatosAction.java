@@ -69,7 +69,6 @@ public class PartidoPoliticoDatosAction extends DispatchAction {
 
 	private PartidoPoliticoBean findByPrimaryKey(String codigo)
 			throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
@@ -175,12 +174,10 @@ public class PartidoPoliticoDatosAction extends DispatchAction {
 	}
 
 	private String insertar(PartidoPoliticoBean bean) throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		return service.insertar(bean);
 	}
 
 	private String editar(PartidoPoliticoBean bean) throws Exception {
-		PartidoPoliticoService service = new PartidoPoliticoService();
 		return service.editar(bean);
 	}
 

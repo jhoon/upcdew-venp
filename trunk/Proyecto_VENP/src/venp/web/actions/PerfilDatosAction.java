@@ -132,31 +132,22 @@ public class PerfilDatosAction extends DispatchAction {
 	}
 
 	private void editar(PerfilBean bean) throws Exception {
-		PerfilService service = new PerfilService();
 		service.editar(bean);
 	}
 
 	private PerfilBean findByPrimaryKey(String codigo) throws Exception {
-		PerfilService service = new PerfilService();
-		PerfilBean bean = service.findByPrimaryKey(Integer.parseInt(codigo));
-
-		return bean;
+		return service.findByPrimaryKey(Integer.parseInt(codigo));
 	}
 
 	private boolean findByName(String nombre) throws Exception {
-		PerfilService service = new PerfilService();
-		
 		return service.findByName(nombre);
 	}
 
 	private boolean findByName(String nombre, int codigo) throws Exception {
-		PerfilService service = new PerfilService();
-		
 		return service.findByName(nombre, codigo);
 	}
 
 	private void insertar(PerfilBean bean) throws Exception {
-		PerfilService service = new PerfilService();
 		service.insertar(bean);
 	}
 
