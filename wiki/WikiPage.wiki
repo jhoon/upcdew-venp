@@ -26,3 +26,9 @@ Así como tener instalado el siguiente software:
   * Apache Tomcat 6.0
   * Apache Maven 2.2.1
   * !MySql Server 5.1
+
+==Screencast de Instalación==
+
+Este es un video de demostración de la instalación 
+
+<wiki:video url="http://www.youtube.com/watch?v=d-G8ThYgx0E" width="640" height="400"/>
