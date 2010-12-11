@@ -19,10 +19,10 @@ El trabajo original, en el cual está basado este proyecto, puede ser encontrado
 Para las instrucciones de instalación se ha supuesto que se tienen los siguientes programas disponibles:
   * Eclipse Galileo SR2 - 3.5.2 ([http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/galileosr2 link])
   * Plugin SVN para Eclipse - Subclipse 1.6 ([http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA link])
-  * Plugin Maven para Eclipse - M2Clipse ([http://m2eclipse.sonatype.org/installing-m2eclipse.html link])
+  * Plugin Maven para Eclipse - !M2Clipse ([http://m2eclipse.sonatype.org/installing-m2eclipse.html link])
 
 Así como tener instalado el siguiente software:
   * Java SDK 1.5+
   * Apache Tomcat 6.0
   * Apache Maven 2.2.1
-  * MySql Server 5.1
+  * !MySql Server 5.1
